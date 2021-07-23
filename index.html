@@ -275,15 +275,10 @@ LicenseCopyright(c) 2020-2023 Whiskeyi
                 </div>
             </a>
             
-                <p class="post-meta" style="margin: 10px 0;">
+                <p class="post-meta">
                     Posted by Whiskeyi on
                     2021-07-20
                 </p>
-                <div class="tags">
-                    
-                      <a href="/tags/#theme" title="theme">theme</a>
-                    
-                </div>
             
 
         </div>
@@ -337,16 +332,6 @@ LicenseCopyright(c) 2020-2023 Whiskeyi
         <hr>
     
         <!-- Featured Tags -->
-
-<section>
-    <!-- no hr -->
-    <h5><a href="/tags/">FEATURED TAGS</a></h5>
-    <div class="tags">
-        
-            
-        
-    </div>
-</section>
 
         <hr>
     
@@ -435,7 +420,7 @@ LicenseCopyright(c) 2020-2023 Whiskeyi
         
     <h5>ARCHIVES</h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li></ul>
     </div>
 
         <hr>
@@ -629,6 +614,21 @@ LicenseCopyright(c) 2020-2023 Whiskeyi
     
         <script src="/js/ribbonDynamic.js"></script>
     
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>
