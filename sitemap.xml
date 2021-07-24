@@ -2,16 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zhuchj.com/photography/index.html</loc>
+    
+    <lastmod>2021-07-24T15:32:42.347Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuchj.com/categories/index.html</loc>
+    
+    <lastmod>2021-07-24T15:32:06.084Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuchj.com/tags/index.html</loc>
+    
+    <lastmod>2021-07-24T15:31:12.419Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zhuchj.com/archive/index.html</loc>
     
-    <lastmod>2021-07-24T15:07:04.299Z</lastmod>
+    <lastmod>2021-07-24T15:28:12.825Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://zhuchj.com/about/index.html</loc>
     
-    <lastmod>2021-07-24T15:07:03.549Z</lastmod>
+    <lastmod>2021-07-24T15:26:49.550Z</lastmod>
     
   </url>
   
@@ -19,27 +40,6 @@
     <loc>https://zhuchj.com/2021/07/20/Hexo-Theme-Snail/</loc>
     
     <lastmod>2021-07-23T08:32:05.365Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zhuchj.com/categories/index.html</loc>
-    
-    <lastmod>2021-07-23T08:23:58.787Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zhuchj.com/photography/index.html</loc>
-    
-    <lastmod>2021-07-23T08:23:25.986Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zhuchj.com/tags/index.html</loc>
-    
-    <lastmod>2021-07-23T08:21:06.518Z</lastmod>
     
   </url>
   
