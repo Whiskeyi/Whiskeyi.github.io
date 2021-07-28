@@ -84,8 +84,7 @@
     
     <!-- background effects end -->
 
-	<!-- Modified by Yu-Hsuan Yen -->
-<!-- Post Header -->
+	<!-- Post Header -->
 <style type="text/css">
     header.intro-header{
         
@@ -110,7 +109,9 @@
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 
                     <div class="site-heading">
-                        <h1>归档</h1>
+                        
+                            <h1>归档</h1>
+                        
                         <!--<hr class="small">-->
                         <span id="subdusi" class="subheading">Website building,to be improved.</span>
                     </div>
@@ -128,6 +129,19 @@
     </div>
     
 </header>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+<script>
+    var boxObj = document.getElementById('words');
+    new Typed(boxObj,{
+       strings: ['自己跌倒,自己爬起来'],
+       typeSpeed: 160,
+       startDelay: 100,
+       loop: false,
+       loopCount: Infinity,
+       cursorChar: '_' // 
+    });
+ </script>
 
 	
     <!-- Navigation -->
@@ -164,7 +178,7 @@
 
                         
                         <li>
-                            <a href="/categories/">分类</a>
+                            <a href="/archive/">归档</a>
                         </li>
                         
                     
@@ -178,7 +192,14 @@
 
                         
                         <li>
-                            <a href="/archive/">归档</a>
+                            <a href="/photography/">摄影</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/categories/">分类</a>
                         </li>
                         
                     
@@ -186,13 +207,6 @@
                         
                         <li>
                             <a href="/tags/">标签</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
-                            <a href="/photography/">摄影</a>
                         </li>
                         
                     
