@@ -238,7 +238,7 @@
     <!-- Main Content -->
 <div class="container">
     <div class="row provisional_notice photography">
-        <p><img src="photo/13.jpg" alt="123"><br><strong>234</strong><br><em>345</em><br><span>456</span></p>
+        <p><img src="photo/13.jpg" alt="123"><br><strong></strong><br><em></em><br><span></span></p>
 <p><img src="photo/17.jpg" alt=""><br><strong></strong><br><em></em><br><span></span></p>
 <p><img src="photo/19.jpg" alt=""><br><strong></strong><br><em></em><br><span></span></p>
 <p><img src="photo/22.jpg" alt=""><br><strong></strong><br><em></em><br><span></span></p>
@@ -456,6 +456,21 @@
     
         <script src="/js/ribbonDynamic.js"></script>
     
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>
