@@ -33,15 +33,15 @@ hr{
 .weixin img.qrcode {
 position: absolute;
 z-index: 99;
-top: -180px;
-right: -45px;
-width: 15rem;
+top: -170px;
+right: -43px;
+width: 14rem;
 max-width: none;
-height: 15rem;
+height: 14rem;
 transform: scale(0);
 transform-origin: top right;
 opacity: 0;
-border: .22rem solid #000;
+border: 0rem solid #fff;
 border-radius: .25rem;
 -webkit-transition: all .4s ease-in-out;
 -o-transition: all .4s ease-in-out;
