@@ -26,6 +26,33 @@ hr{
   color: rgb(199, 200, 206)!important;
   border-color: none!important;
 }
+.weixin {
+  position: relative;
+}
+
+.weixin img.qrcode {
+position: absolute;
+z-index: 99;
+top: -180px;
+right: -45px;
+width: 15rem;
+max-width: none;
+height: 15rem;
+transform: scale(0);
+transform-origin: top right;
+opacity: 0;
+border: .22rem solid #000;
+border-radius: .25rem;
+-webkit-transition: all .4s ease-in-out;
+-o-transition: all .4s ease-in-out;
+transition: all .4s ease-in-out;
+
+}
+
+.weixin:hover img.qrcode {
+  transform: scale(1);
+  opacity: 1;
+}
 .sidebar-container h5{
   color: rgb(128, 128, 128)!important;
 }
