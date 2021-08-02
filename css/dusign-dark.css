@@ -39,7 +39,7 @@ width: 14rem;
 max-width: none;
 height: 14rem;
 transform: scale(0);
-transform-origin: top right;
+transform-origin: bottom;
 opacity: 0;
 border: 0rem solid #fff;
 border-radius: .25rem;
