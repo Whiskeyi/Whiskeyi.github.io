@@ -3,10 +3,11 @@ Allow: /
 Allow: /home/
 Allow: /archives/
 Allow: /tags/
+Allow: /about/
 
 Disallow: /js/
 Disallow: /css/
 Disallow: /fonts/
 
-Sitemap: https://www.dusign.net/sitemap.xml
-Sitemap: https://www.dusign.net/baidusitemap.xml
+Sitemap: https://zhuchj.com/sitemap.xml
+Sitemap: https://zhuchj.com/baidusitemap.xml
