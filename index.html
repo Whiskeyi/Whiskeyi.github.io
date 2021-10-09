@@ -260,8 +260,6 @@
 
     
 
-    
-
 
 
 <!-- Main Content -->
@@ -285,35 +283,6 @@
                 <p class="post-meta">
                     由 Whiskeyi 于
                     2021-10-09 发布
-                </p>
-            
-
-        </div>
-        <hr>
-
-    
-
-    
-
-        <div class="post-preview">
-
-            <a href="/2021/08/03/ZHUCHJ/">
-                <h2 class="post-title">
-                    ZHUCHJ
-                </h2>
-                <h3 class="post-subtitle">
-                    A blog of myself.
-                </h3>
-                <div class="post-content-preview">
-                    ZHUCHJView Github
-hexo
-...
-                </div>
-            </a>
-            
-                <p class="post-meta">
-                    由 Whiskeyi 于
-                    2021-08-03 发布
                 </p>
             
 
@@ -543,6 +512,21 @@ hexo
     
         <script src="/js/ribbonDynamic.js"></script>
     
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>

@@ -55,14 +55,14 @@ transition: all .4s ease-in-out;
 }
 .sidebar-container a:hover,
 .sidebar-container a:active {
-  color: #0085a1 !important;
+  color: #DB4D6D !important;
 }
 .sidebar-container .tags a {
   border-color: #bfbfbf;
 }
 .sidebar-container .tags a:hover,
 .sidebar-container .tags a:active {
-  border-color: #0085a1;
+  border-color: #DB4D6D;
 }
 
 .sidebar-container .short-about img {
@@ -110,7 +110,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #0085a1;
+  color: #DB4D6D;
 }
 a img:hover,
 a img:focus {
@@ -186,7 +186,7 @@ pre code {
 }
 .post-container a:hover,
 .post-container a:focus {
-  color: #0085a1;
+  color: #DB4D6D;
 }
 .post-container h1,
 .post-container h2,
@@ -253,8 +253,8 @@ pre code {
 }
 .post-container .tags a:hover,
 .post-container .tags a:active {
-  color: #0085a1;
-  border-color: #0085a1;
+  color: #DB4D6D;
+  border-color: #DB4D6D;
 }
 
 @media only screen and (max-width: 767px) {
@@ -397,14 +397,14 @@ pre code {
   }
   .navbar-custom.is-fixed .navbar-brand:hover,
   .navbar-custom.is-fixed .navbar-brand:focus {
-    color: #0085a1;
+    color: #DB4D6D;
   }
   .navbar-custom.is-fixed .nav li a {
     color: #404040;
   }
   .navbar-custom.is-fixed .nav li a:hover,
   .navbar-custom.is-fixed .nav li a:focus {
-    color: #0085a1;
+    color: #DB4D6D;
   }
   .navbar-custom.is-visible {
     /* if the user changes the scrolling direction, we show the header */
@@ -554,7 +554,7 @@ pre code {
 .post-preview > a:hover,
 .post-preview > a:focus {
   text-decoration: none;
-  color: #0085a1;
+  color: #DB4D6D;
 }
 .post-preview > a > .post-title {
   font-size: 21px;
@@ -582,7 +582,7 @@ pre code {
 }
 .post-preview > .post-meta > a:hover,
 .post-preview > .post-meta > a:focus {
-  color: #0085a1;
+  color: #DB4D6D;
   text-decoration: underline;
 }
 @media only screen and (min-width: 768px) {
@@ -604,7 +604,7 @@ pre code {
   color: #a3a3a3;
 }
 .post-content-preview:hover {
-  color: #0085a1;
+  color: #DB4D6D;
 }
 @media only screen and (min-width: 768px) {
   .post-content-preview {
@@ -644,7 +644,7 @@ footer .copyright a {
 }
 footer .copyright a:hover,
 footer .copyright a:focus {
-  color: #0085a1;
+  color: #DB4D6D;
 }
 .floating-label-form-group {
   font-size: 14px;
@@ -691,7 +691,7 @@ footer .copyright a:focus {
   opacity: 1;
 }
 .floating-label-form-group-with-focus label {
-  color: #0085a1;
+  color: #DB4D6D;
 }
 form .row:first-child .floating-label-form-group {
   border-top: 1px solid #eeeeee;
@@ -713,8 +713,8 @@ form .row:first-child .floating-label-form-group {
 }
 .btn-default:hover,
 .btn-default:focus {
-  background-color: #0085a1;
-  border: 1px solid #0085a1;
+  background-color: #DB4D6D;
+  border: 1px solid #DB4D6D;
   color: white;
 }
 .pager {
@@ -747,8 +747,8 @@ form .row:first-child .floating-label-form-group {
 .pager li > a:hover,
 .pager li > a:focus {
   color: white;
-  background-color: #0085a1;
-  border: 1px solid #0085a1;
+  background-color: #DB4D6D;
+  border: 1px solid #DB4D6D;
 }
 .pager .disabled > a,
 .pager .disabled > a:hover,
@@ -761,12 +761,12 @@ form .row:first-child .floating-label-form-group {
 ::-moz-selection {
   color: white;
   text-shadow: none;
-  background: #0085a1;
+  background: #DB4D6D;
 }
 ::selection {
   color: white;
   text-shadow: none;
-  background: #0085a1;
+  background: #DB4D6D;
 }
 img::selection {
   color: white;
@@ -777,7 +777,7 @@ img::-moz-selection {
   background: transparent;
 }
 body {
-  webkit-tap-highlight-color: #0085a1;
+  webkit-tap-highlight-color: #DB4D6D;
 }
 .tags {
   margin-bottom: -5px;
@@ -834,7 +834,7 @@ body {
 #tag_clouds .tag:hover,
 #tag_clouds a:active,
 #tag_clouds .tag:active {
-  background-color: #0085a1 !important;
+  background-color: #DB4D6D !important;
 }
 @media only screen and (min-width: 768px) {
   #tag_clouds {
@@ -853,7 +853,7 @@ body {
   margin-top: 0px;
 }
 .listing-seperator {
-  color: #0085a1;
+  color: #DB4D6D;
   font-size: 21px !important;
 }
 .listing-seperator::before {
