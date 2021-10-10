@@ -154,14 +154,16 @@
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script>
     var boxObj = document.getElementById('words');
-    new Typed(boxObj,{
-       strings: ['自己跌倒,自己爬起来'],
-       typeSpeed: 160,
-       startDelay: 100,
-       loop: false,
-       loopCount: Infinity,
-       cursorChar: '|' // 
-    });
+    if (boxObj) {
+        new Typed(boxObj,{
+        strings: ['清风 夏目 远山 与你'],
+        typeSpeed: 160,
+        startDelay: 100,
+        loop: false,
+        loopCount: Infinity,
+        cursorChar: '|' // 
+        });
+    }
  </script>
 
 	
@@ -199,20 +201,6 @@
 
                         
                         <li>
-                            <a href="/about/">关于</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
-                            <a href="/categories/">分类</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
                             <a href="/archive/">归档</a>
                         </li>
                         
@@ -228,6 +216,20 @@
                         
                         <li>
                             <a href="/tags/">标签</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">关于</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/categories/">分类</a>
                         </li>
                         
                     
@@ -281,7 +283,7 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h2 id="编写程序，测量cacheline的大小"><a href="#编写程序，测量cacheline的大小" class="headerlink" title="编写程序，测量cacheline的大小"></a>编写程序，测量cacheline的大小</h2><h3 id="测量cacheline前需要了解的信息"><a href="#测量cacheline前需要了解的信息" class="headerlink" title="测量cacheline前需要了解的信息"></a>测量cacheline前需要了解的信息</h3><p>&emsp;&emsp;计算机带有两级或三级缓存，通常称为 L1、L2 和L3。L的等级越低代表离CPU越近，通过任务管理器和软件CPU-Z，我了解到在我的机器上，有一个6&times;64KB的L1数据缓存、一个6&times;64KB的L1指令缓存、一个6&times;256KB的L2缓存和一个12MB的L3数据缓存。<br>&emsp;&emsp;L1数据和指令缓存分别用于存放数据及执行数据的指令解码，L2二级缓存是L1一级缓存跟主内存之间的缓冲器，L3为L2与主内存之间的缓冲器。其中L3是计算 CPU共享的，L1、L2是CPU中核独享的。<br>&emsp;&emsp;cache分成多个组，每个组分成多个行。<br>&emsp;&emsp;如图中的8-way指的是8路组相连（8-way set associative），每个组里面有8个行。linesize是cache的基本单位，从主存向cache迁移数据都是按照linesize为单位替换的。比如linesize为64Byte，那么迁移必须一次迁移64Byte到cache。</p>
+                <h2 id="编写程序，测量cacheline的大小"><a href="#编写程序，测量cacheline的大小" class="headerlink" title="编写程序，测量cacheline的大小"></a>编写程序，测量cacheline的大小</h2><h3 id="测量cacheline需要了解的信息"><a href="#测量cacheline需要了解的信息" class="headerlink" title="测量cacheline需要了解的信息"></a>测量cacheline需要了解的信息</h3><p>&emsp;&emsp;计算机带有两级或三级缓存，通常称为 L1、L2 和L3。L的等级越低代表离CPU越近，通过任务管理器和软件CPU-Z，我了解到在我的机器上，有一个6&times;64KB的L1数据缓存、一个6&times;64KB的L1指令缓存、一个6&times;256KB的L2缓存和一个12MB的L3数据缓存。<br>&emsp;&emsp;L1数据和指令缓存分别用于存放数据及执行数据的指令解码，L2二级缓存是L1一级缓存跟主内存之间的缓冲器，L3为L2与主内存之间的缓冲器。其中L3是计算 CPU共享的，L1、L2是CPU中核独享的。<br>&emsp;&emsp;cache分成多个组，每个组分成多个行。<br>&emsp;&emsp;如图中的8-way指的是8路组相连（8-way set associative），每个组里面有8个行。linesize是cache的基本单位，从主存向cache迁移数据都是按照linesize为单位替换的。比如linesize为64Byte，那么迁移必须一次迁移64Byte到cache。</p>
 <p><img src="img/cacheline/task manager.png" alt="task manager"><br><img src="img/cacheline/CPU-Z.png" alt="CPU-Z"></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;  </span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    <span class="keyword">int</span> arr[<span class="number">64</span> * <span class="number">1024</span> * <span class="number">1024</span>];  </span><br><span class="line">    <span class="keyword">int</span> length = <span class="keyword">sizeof</span>(arr)/<span class="keyword">sizeof</span>(<span class="keyword">int</span>);  </span><br><span class="line"><span class="comment">//  for (int i = 0; i &lt; length; i++)    </span></span><br><span class="line"><span class="comment">//  &#123;  </span></span><br><span class="line"><span class="comment">//      arr[i] *= 3;  </span></span><br><span class="line"><span class="comment">//  &#125;  //循环1</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; i += <span class="number">16</span>)  </span><br><span class="line">    &#123;  </span><br><span class="line">        arr[i] *= <span class="number">3</span>;  </span><br><span class="line">    &#125;   <span class="comment">//循环2</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;  </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
 <p>&emsp;&emsp;第一个循环将数组的每个值乘3，第二个循环将每16个值乘3，第二个循环只做了第一个约6%的工作，但在现代机器上，两者几乎运行相同时间：在我机器上分别是34毫秒和35毫秒（如下图所示）。<br><img src="img/cacheline/time1.png" alt="time1"><br><img src="img/cacheline/time2.png" alt="time2"><br>&emsp;&emsp;两个循环花费相同时间的原因跟内存有关。循环执行时间长短由数组的内存访问次数决定的，而非整型数的乘法运算次数。这说明这两个循环的主存访问次数是相同的。<br>&emsp;&emsp;进一步探索这个例子。我们尝试使用不同的循环步长，而不仅仅是1和16。</p>
@@ -466,14 +468,14 @@
                 <p class="copyright text-muted text-center">
                     Copyright &copy;    
                     <a href="https://zhuchj.com">
-                        <i>zhuchj.com</i>
+                        <i>zhuchj</i>
                     </a>| 
-                    2020-2023 
+                    2020-2023
                     All Rights Reserved.
                     <br>
                     备案号：浙ICP备2020041949号-1|
                     <iframe name="star" style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0"
-                        width="100px" height="20px"
+                        width="60px" height="20px"
                         src="https://ghbtns.com/github-btn.html?user=Whiskeyi&repo=Whiskeyi.github.io&type=star">
                     </iframe>
                 </p>
