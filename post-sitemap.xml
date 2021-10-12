@@ -8,8 +8,16 @@
     </url>
 
     <url>
+        <loc>https://zhuchj.com/debounce.html</loc>
+        <lastmod>2021-10-12T15:50:43.765Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://zhuchj.com/cacheline.html</loc>
-        <lastmod>2021-10-10T07:33:00.708Z</lastmod>
+        <lastmod>2021-10-12T15:50:34.231Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

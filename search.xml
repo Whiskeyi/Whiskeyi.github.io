@@ -4,7 +4,32 @@
   
     
     <entry>
-      <title>编写程序，测量cacheline大小</title>
+      <title>防抖(debounce)&amp;节流(throttle)</title>
+      <link href="/debounce.html"/>
+      <url>/debounce.html</url>
+      
+        <content type="html"><![CDATA[<!-- toc --><h2 id="防抖-debounce-amp-节流-throttle"><a href="#防抖-debounce-amp-节流-throttle" class="headerlink" title="防抖(debounce)&amp;节流(throttle)"></a>防抖(debounce)&amp;节流(throttle)</h2><h3 id="什么是防抖和节流？"><a href="#什么是防抖和节流？" class="headerlink" title="什么是防抖和节流？"></a>什么是防抖和节流？</h3><h4 id="防抖-debounce"><a href="#防抖-debounce" class="headerlink" title="防抖(debounce)"></a>防抖(debounce)</h4><p>&emsp;&emsp;当调用动作n毫秒后，才会执行该动作，若在这n毫秒内又调用此动作则将重新计算执行时间。<br>&emsp;&emsp;理解：持续触发不执行，不触发的一段时间之后才执行。</p><h4 id="节流-throttle"><a href="#节流-throttle" class="headerlink" title="节流(throttle)"></a>节流(throttle)</h4><p>&emsp;&emsp;预先设定一个执行周期，当调用动作的时刻大于等于执行周期则执行该动作，然后进入下一个新周期。<br>&emsp;&emsp;理解：隔一定执行周期（时间）触发一次事件。</p><h3 id="业务场景"><a href="#业务场景" class="headerlink" title="业务场景"></a>业务场景</h3><h4 id="debounce"><a href="#debounce" class="headerlink" title="debounce"></a>debounce</h4><p>1.<code>scroll</code>事件（资源的加载）<br>2.<code>mousemove</code>事件（拖拽）<br>3.<code>resize</code>事件（响应式布局样式）<br>4.<code>keyup</code>事件（输入框文字停止打字后才进行校验）</p><h4 id="throttle"><a href="#throttle" class="headerlink" title="throttle"></a>throttle</h4><p>1.<code>click</code>事件（不停快速点击按钮，减少触发频次）<br>2.<code>scroll</code>事件（返回顶部按钮出现\隐藏事件触发）<br>3.<code>keyup</code>事件（输入框文字与显示栏内容复制同步）<br>4.减少发送<code>ajax</code>请求，降低请求频率</p><h3 id="防抖代码实现"><a href="#防抖代码实现" class="headerlink" title="防抖代码实现"></a>防抖代码实现</h3><h4 id="防抖实现思路"><a href="#防抖实现思路" class="headerlink" title="防抖实现思路"></a>防抖实现思路</h4><h3 id="节流代码实现"><a href="#节流代码实现" class="headerlink" title="节流代码实现"></a>节流代码实现</h3><h4 id="节流实现思路"><a href="#节流实现思路" class="headerlink" title="节流实现思路"></a>节流实现思路</h4><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> JS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>编写程序,测量cacheline大小</title>
       <link href="/cacheline.html"/>
       <url>/cacheline.html</url>
       
