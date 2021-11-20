@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zhuchj.com/archive/index.html</loc>
+    
+    <lastmod>2021-11-20T10:23:17.544Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuchj.com/about/index.html</loc>
+    
+    <lastmod>2021-11-20T10:19:09.873Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zhuchj.com/copy.html</loc>
     
     <lastmod>2021-10-14T12:45:41.389Z</lastmod>
@@ -30,13 +44,6 @@
   </url>
   
   <url>
-    <loc>https://zhuchj.com/about/index.html</loc>
-    
-    <lastmod>2021-10-10T08:07:53.200Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://zhuchj.com/tags/index.html</loc>
     
     <lastmod>2021-07-25T13:12:19.999Z</lastmod>
@@ -47,13 +54,6 @@
     <loc>https://zhuchj.com/categories/index.html</loc>
     
     <lastmod>2021-07-25T13:09:00.783Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zhuchj.com/archive/index.html</loc>
-    
-    <lastmod>2021-07-25T13:08:51.015Z</lastmod>
     
   </url>
   
