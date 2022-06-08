@@ -198,14 +198,7 @@
 
                         
                         <li>
-                            <a href="/photography/">摄影</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
-                            <a href="/about/">关于</a>
+                            <a href="/categories/">分类</a>
                         </li>
                         
                     
@@ -219,6 +212,13 @@
 
                         
                         <li>
+                            <a href="/about/">关于</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
                             <a href="/tags/">标签</a>
                         </li>
                         
@@ -226,7 +226,7 @@
 
                         
                         <li>
-                            <a href="/categories/">分类</a>
+                            <a href="/photography/">摄影</a>
                         </li>
                         
                     
@@ -394,12 +394,12 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/promise.html" data-toggle="tooltip" data-placement="top" title="进一步理解Promise对象(Promise)">Previous Post</a>
+                        <a href="/optimization.html" data-toggle="tooltip" data-placement="top" title="前端性能优化(Performance Optimization)">Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/optimization.html" data-toggle="tooltip" data-placement="top" title="前端性能优化(Performance Optimization)">Next Post</a>
+                        <a href="/javaee.html" data-toggle="tooltip" data-placement="top" title="JavaEE">Next Post</a>
                     </li>
                     
                 </ul>
@@ -704,6 +704,21 @@
     
         <script src="/js/ribbonDynamic.js"></script>
     
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>

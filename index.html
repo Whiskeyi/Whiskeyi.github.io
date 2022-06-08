@@ -175,14 +175,7 @@
 
                         
                         <li>
-                            <a href="/photography/">摄影</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
-                            <a href="/about/">关于</a>
+                            <a href="/categories/">分类</a>
                         </li>
                         
                     
@@ -196,6 +189,13 @@
 
                         
                         <li>
+                            <a href="/about/">关于</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
                             <a href="/tags/">标签</a>
                         </li>
                         
@@ -203,7 +203,7 @@
 
                         
                         <li>
-                            <a href="/categories/">分类</a>
+                            <a href="/photography/">摄影</a>
                         </li>
                         
                     
@@ -360,15 +360,15 @@
 
         <div class="post-preview">
 
-            <a href="/mobile.html">
+            <a href="/optimization.html">
                 <h2 class="post-title">
-                    移动端适配(Mobile Terminal Adaptation)
+                    前端性能优化(Performance Optimization)
                 </h2>
                 <h3 class="post-subtitle">
-                    CSS
+                    HTML & CSS & JS
                 </h3>
                 <div class="post-content-preview">
-                    移动端适配(mobile terminal adaptation)前言目前移动端的屏幕大小各异,市面上各种尺寸的机型都有,而且有 1 ......
+                    前端性能优化(performance optimization)说在最前面性能是前端开发一个非常重要的组成部分，与应用不同，网页的所有......
                 </div>
             </a>
             
@@ -387,15 +387,15 @@
 
         <div class="post-preview">
 
-            <a href="/optimization.html">
+            <a href="/mobile.html">
                 <h2 class="post-title">
-                    前端性能优化(Performance Optimization)
+                    移动端适配(Mobile Terminal Adaptation)
                 </h2>
                 <h3 class="post-subtitle">
-                    HTML & CSS & JS
+                    CSS
                 </h3>
                 <div class="post-content-preview">
-                    前端性能优化(performance optimization)说在最前面性能是前端开发一个非常重要的组成部分，与应用不同，网页的所有......
+                    移动端适配(mobile terminal adaptation)前言目前移动端的屏幕大小各异,市面上各种尺寸的机型都有,而且有 1 ......
                 </div>
             </a>
             
@@ -711,6 +711,21 @@ JS......
     
         <script src="/js/ribbonDynamic.js"></script>
     
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>
