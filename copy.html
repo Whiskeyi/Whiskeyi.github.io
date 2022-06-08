@@ -16,7 +16,7 @@
     <!--<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
     <title>
         
-          深拷贝&amp;浅拷贝 - ZHUCHJ
+          浅拷贝(Shallow Copy)&amp;深拷贝(Deep Copy) - ZHUCHJ
         
     </title>
 
@@ -114,7 +114,7 @@
                               <a class="tag" href="/tags/#JS" title="JS">JS</a>
                             
                         </div>
-                        <h1>深拷贝&amp;浅拷贝</h1>
+                        <h1>浅拷贝(Shallow Copy)&amp;深拷贝(Deep Copy)</h1>
                         <h2 class="subheading">JS</h2>
                         <span class="meta">
                             由 Whiskeyi 于
@@ -124,8 +124,8 @@
                         
                             <div class="blank_box"></div>
                             <span class="meta">
-                                全文 <span class="post-count">0</span> 字，
-                                阅读约需 <span class="post-count">1</span> 分钟
+                                全文 <span class="post-count">1.1k</span> 字，
+                                阅读约需 <span class="post-count">4</span> 分钟
                             </span>
                             <div class="blank_box"></div>
                             <!-- 不蒜子统计 start -->
@@ -196,7 +196,7 @@
 
                         
                         <li>
-                            <a href="/categories/">分类</a>
+                            <a href="/photography/">摄影</a>
                         </li>
                         
                     
@@ -217,14 +217,14 @@
 
                         
                         <li>
-                            <a href="/photography/">摄影</a>
+                            <a href="/tags/">标签</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/tags/">标签</a>
+                            <a href="/categories/">分类</a>
                         </li>
                         
                     
@@ -278,11 +278,96 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                
+                <h2 id="浅拷贝-shallow-copy-amp-深拷贝-deep-copy"><a href="#浅拷贝-shallow-copy-amp-深拷贝-deep-copy" class="headerlink" title="浅拷贝(shallow copy)&amp;深拷贝(deep copy)"></a>浅拷贝(shallow copy)&amp;深拷贝(deep copy)</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><blockquote>
+<p>为了更好理解浅拷贝和深拷贝需要先了解基本概念</p>
+</blockquote>
+<h4 id="JS-数据类型"><a href="#JS-数据类型" class="headerlink" title="JS 数据类型"></a>JS 数据类型</h4><ul>
+<li>基本数据类型：值类型，变量名和值都储存在栈内存中。<code>number、string、boolean、undefined、null、symbol(ES6)</code>。</li>
+<li>引用数据类型：地址类型，变量名储存在栈内存中，值储存在堆内存中，但是堆内存中会提供一个储存在栈内存引用地址指向堆内存中的值。<code>function、object、array</code>。</li>
+</ul>
+<h3 id="什么是浅拷贝和深拷贝"><a href="#什么是浅拷贝和深拷贝" class="headerlink" title="什么是浅拷贝和深拷贝"></a>什么是浅拷贝和深拷贝</h3><p>根据上面的基本概念，实现明确一点，深浅拷贝对于基本数据类型是没有意义的。因为，基本类型赋值时，赋的是数据。而引用类型赋值时，赋的值地址(就是引用类型变量在内存中保存的内容)。</p>
+<h4 id="浅拷贝-shallow-copy"><a href="#浅拷贝-shallow-copy" class="headerlink" title="浅拷贝(shallow copy)"></a>浅拷贝(shallow copy)</h4><p>复制指向某个对象的指针，而不复制对象本身，新旧对象共享同一块内存。</p>
+<h4 id="深拷贝-deep-copy"><a href="#深拷贝-deep-copy" class="headerlink" title="深拷贝(deep copy)"></a>深拷贝(deep copy)</h4><p>另外创造一个一模一样的对象，新对象跟原对象不共享内存，修改新对象不会同时修改原对象。</p>
+<h3 id="具体说明"><a href="#具体说明" class="headerlink" title="具体说明"></a>具体说明</h3><p>为了更好地解释深浅拷贝，引入赋值这一概念。</p>
+<h4 id="赋值-copy"><a href="#赋值-copy" class="headerlink" title="赋值(copy)"></a>赋值(copy)</h4><ul>
+<li>基本数据类型：赋值，赋值之后两个变量互不影响。</li>
+<li>引用数据类型：赋址，两个变量具有相同的引用，指向同一个对象，相互之间有影响。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">  name: <span class="string">"whiskey"</span>,</span><br><span class="line">  data: &#123; <span class="attr">num</span>: <span class="number">1</span> &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> b = &#123;&#125;;</span><br><span class="line">b = a;</span><br><span class="line">b.name = <span class="string">"zcj"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a.name); <span class="comment">// "zcj", a 中 name 属性也改变了</span></span><br></pre></td></tr></table></figure>
+<p>通常我们在开发中并不希望改变变量 a 之后会影响到变量 b，这时就需要用到浅拷贝和深拷贝。</p>
+<h4 id="浅拷贝-shallow-copy-1"><a href="#浅拷贝-shallow-copy-1" class="headerlink" title="浅拷贝 (shallow copy)"></a>浅拷贝 (shallow copy)</h4><ol>
+<li><code>Object.assign(target,source)</code><br>ES6 中新增的对象方法，将所有可枚举属性的值从一个或多个源对象复制到目标对象,并返回目标对象。<code>Object.assign()</code>拷贝的是对象的属性的引用，而不是对象本身。当 object 只有一层的时候，是深拷贝。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">  name: <span class="string">"whiskey"</span>,</span><br><span class="line">  data: &#123; <span class="attr">num</span>: <span class="number">1</span> &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> b = <span class="built_in">Object</span>.assign(&#123;&#125;, a);</span><br><span class="line">b.name = <span class="string">"zcj"</span>;</span><br><span class="line">b.data.num = <span class="number">0</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a.name); <span class="comment">// "whiskey"</span></span><br><span class="line"><span class="built_in">console</span>.log(a.data.num); <span class="comment">// 0, 两层后同样会变化</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><code>…扩展操作符(ES6)</code></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">  name: <span class="string">"whiskey"</span>,</span><br><span class="line">  data: &#123; <span class="attr">num</span>: <span class="number">1</span> &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> b = &#123; ...a &#125;;</span><br><span class="line">b.name = <span class="string">"zcj"</span>;</span><br><span class="line">b.data.num = <span class="number">0</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a.name); <span class="comment">// "whiskey"</span></span><br><span class="line"><span class="built_in">console</span>.log(a.data.num); <span class="comment">// 0, 两层后同样会变化</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><code>Array.prototype.slice()</code></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">0</span>, <span class="string">"1"</span>, [<span class="number">2</span>, <span class="number">3</span>]];</span><br><span class="line"><span class="keyword">var</span> b = a.slice(<span class="number">0</span>, <span class="number">3</span>); <span class="comment">// [0, "1", [2, 3]]</span></span><br><span class="line">b[<span class="number">0</span>] = <span class="string">"1"</span>;</span><br><span class="line">b[<span class="number">2</span>][<span class="number">0</span>] = <span class="number">3</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a[<span class="number">0</span>]); <span class="comment">// 0</span></span><br><span class="line"><span class="built_in">console</span>.log(a[<span class="number">2</span>][<span class="number">0</span>]); <span class="comment">// 3, 两层后同样会变化</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><code>Array.prototype.concat()</code></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">0</span>, <span class="string">"1"</span>, [<span class="number">2</span>, <span class="number">3</span>]];</span><br><span class="line"><span class="keyword">var</span> b = a.concat(); <span class="comment">// [0, "1", [2, 3]]</span></span><br><span class="line">b[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">b[<span class="number">2</span>][<span class="number">0</span>] = <span class="number">3</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a[<span class="number">0</span>]); <span class="comment">// 0</span></span><br><span class="line"><span class="built_in">console</span>.log(a[<span class="number">2</span>][<span class="number">0</span>]); <span class="comment">// 3, 两层后同样会变化</span></span><br></pre></td></tr></table></figure>
+<h4 id="深拷贝-deep-copy-1"><a href="#深拷贝-deep-copy-1" class="headerlink" title="深拷贝 (deep copy)"></a>深拷贝 (deep copy)</h4><ol>
+<li><code>JSON.parse(JSON.stringify())</code><br>JSON.stringify()将对象转成 JSON 字符串，JSON.parse()把字符串解析成对象，一去一来，新的对象产生了，并开辟了新的栈，实现深拷贝。需要注意的是，这个方法不能深拷贝函数，原因是 JSON.stringify()不能接受函数，同时会有如下问题：<ul>
+<li>会忽略 undefined</li>
+<li>会忽略 symbol(ES6 基本类型)</li>
+<li>不能序列化函数</li>
+<li>Infinity 值会被置为 null</li>
+<li>循环引用(对象的对象引用了他们自身)会出错</li>
+<li>Date, Set, Map 会转换为字符串，使得转换结果不一致</li>
+<li>不能处理正则</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">0</span>, <span class="string">"1"</span>, [<span class="number">2</span>, <span class="number">3</span>]];</span><br><span class="line"><span class="keyword">var</span> b = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(a)); <span class="comment">// [0, "1", [2, 3]]</span></span><br><span class="line">b[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">b[<span class="number">2</span>][<span class="number">0</span>] = <span class="number">3</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a[<span class="number">0</span>]); <span class="comment">// 0</span></span><br><span class="line"><span class="built_in">console</span>.log(a[<span class="number">2</span>][<span class="number">0</span>]); <span class="comment">// 2, 两层后不会发生变化</span></span><br></pre></td></tr></table></figure>
+<p>2.  <code>递归赋值</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">  name: <span class="string">"whiskey"</span>,</span><br><span class="line">  data: &#123; <span class="attr">num</span>: <span class="number">1</span> &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> b = &#123;&#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepCopy</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> clone = &#123;&#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> obj) &#123;</span><br><span class="line">    <span class="keyword">if</span> (obj[i] != <span class="literal">null</span> &amp;&amp; <span class="keyword">typeof</span> obj[i] == <span class="string">"object"</span>)</span><br><span class="line">      clone[i] = deepCopy(obj[i]);</span><br><span class="line">    <span class="keyword">else</span> clone[i] = obj[i];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> clone;</span><br><span class="line">&#125;</span><br><span class="line">b = deepCopy(a);</span><br><span class="line">b.data.num = <span class="number">0</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a.data.num); <span class="comment">//1，a 属性值没有改变</span></span><br></pre></td></tr></table></figure>
+<p>3.  <code>深拷贝现成函数库</code><br>如 <code>lodash</code> 函数库的<code>\_.cloneDeep</code>这里不具体展开讲。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">和原数据指向同一对象</th>
+<th style="text-align:center">第一层数据为基本数据类型</th>
+<th style="text-align:center">原数据中包含子对象</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">赋值</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">改变会使原数据一同改变</td>
+<td style="text-align:center">改变会使原数据一同改变</td>
+</tr>
+<tr>
+<td style="text-align:center">浅拷贝</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">改变不会使原数据一同改变</td>
+<td style="text-align:center">改变会使原数据一同改变</td>
+</tr>
+<tr>
+<td style="text-align:center">深拷贝</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">改变不会使原数据一同改变</td>
+<td style="text-align:center">改变不会使原数据一同改变</td>
+</tr>
+</tbody>
+</table>
+</div>
+
 
                 <hr>
                 <!-- Pager -->
                 <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/javaee.html" data-toggle="tooltip" data-placement="top" title="JavaEE">Previous Post</a>
+                    </li>
                     
                     
                     <li class="next">
@@ -322,6 +407,17 @@
             <!-- Table of Contents -->
 
     
+      
+        <aside id="sidebar">
+          <div id="toc" class="toc-article">
+          <strong class="toc-title">文章目录：</strong>
+          
+            
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#浅拷贝-shallow-copy-amp-深拷贝-deep-copy"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">浅拷贝(shallow copy)&amp;深拷贝(deep copy)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#基本概念"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">基本概念</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#JS-数据类型"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">JS 数据类型</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#什么是浅拷贝和深拷贝"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">什么是浅拷贝和深拷贝</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#浅拷贝-shallow-copy"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">浅拷贝(shallow copy)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#深拷贝-deep-copy"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">深拷贝(deep copy)</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#具体说明"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">具体说明</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#赋值-copy"><span class="toc-nav-number">1.3.1.</span> <span class="toc-nav-text">赋值(copy)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#浅拷贝-shallow-copy-1"><span class="toc-nav-number">1.3.2.</span> <span class="toc-nav-text">浅拷贝 (shallow copy)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#深拷贝-deep-copy-1"><span class="toc-nav-number">1.3.3.</span> <span class="toc-nav-text">深拷贝 (deep copy)</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#总结"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">总结</span></a></li></ol></li></ol>
+            
+          
+          </div>
+        </aside>
       
     
 

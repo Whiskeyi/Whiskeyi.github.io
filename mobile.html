@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="baidu-site-verification" content="093lY4ziMu" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!--<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
+    <title>
+        
+          移动端适配(Mobile Terminal Adaptation) - ZHUCHJ
+        
+    </title>
+
+    <link rel="canonical" href="https://zhuchj.com/mobile.html">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS --> 
+    
+        
+<link rel="stylesheet" href="/css/dusign-light.css">
+
+        
+<link rel="stylesheet" href="/css/dusign-common-light.css">
+
+        
+<link rel="stylesheet" href="/css/font-awesome.css">
+
+        
+<link rel="stylesheet" href="/css/toc.css">
+
+        <!-- background effects end -->
+    
+    
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    
+<link rel="stylesheet" href="/css/widget.css">
+
+
+    
+<link rel="stylesheet" href="/css/rocket.css">
+
+
+    
+<link rel="stylesheet" href="/css/signature.css">
+
+
+    
+<link rel="stylesheet" href="/css/fonts.googleapis.css">
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <!-- photography -->
+    
+<link rel="stylesheet" href="/css/photography.css">
+
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- background effects start -->
+    
+    <!-- background effects end -->
+
+	<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            
+                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('img/mobile/head.jpg')
+                /*post*/
+            
+        
+    }
+    
+    #signature{
+        background-image: url('/img/signature/dusign.png');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#JS" title="JS">JS</a>
+                            
+                              <a class="tag" href="/tags/#CSS" title="CSS">CSS</a>
+                            
+                        </div>
+                        <h1>移动端适配(Mobile Terminal Adaptation)</h1>
+                        <h2 class="subheading">CSS</h2>
+                        <span class="meta">
+                            由 Whiskeyi 于
+                            2022-02-28 发布
+                        </span>
+
+                        
+                            <div class="blank_box"></div>
+                            <span class="meta">
+                                全文 <span class="post-count">2.3k</span> 字，
+                                阅读约需 <span class="post-count">8</span> 分钟
+                            </span>
+                            <div class="blank_box"></div>
+                            <!-- 不蒜子统计 start -->
+                            <span class="meta">
+                                浏览 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> 次
+                            </span>
+                            <!-- 不蒜子统计 end -->
+                        
+
+                    </div>
+                
+
+                </div>
+            </div>
+        </div>      
+    </div>
+
+    
+</header>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+    var boxObj = document.getElementById('words');
+    if (boxObj) {
+        new Typed(boxObj,{
+        strings: ['Whiskeyi&#39;s Blog'],
+        typeSpeed: 160,
+        startDelay: 100,
+        loop: false,
+        loopCount: Infinity,
+        cursorChar: '|' // 
+        });
+    }
+ </script>
+
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">ZHUCHJ</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/photography/">摄影</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">关于</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">归档</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">标签</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/categories/">分类</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h2 id="移动端适配-mobile-terminal-adaptation"><a href="#移动端适配-mobile-terminal-adaptation" class="headerlink" title="移动端适配(mobile terminal adaptation)"></a>移动端适配(mobile terminal adaptation)</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>目前移动端的屏幕大小各异,市面上各种尺寸的机型都有,而且有 1 倍屏，2 倍屏，3 倍屏之分，这对前端界面在不同设备下的呈现效果提出挑战，我们希望找到一种完美适配各种机型的方案(元素和字体能够保持一定比例随着用户屏幕尺寸变化)，在用户面前呈现想要的效果。下面这篇文章聊聊关于前端开发中移动端适配的问题。</p>
+<h3 id="几个基本概念"><a href="#几个基本概念" class="headerlink" title="几个基本概念"></a>几个基本概念</h3><h4 id="屏幕大小"><a href="#屏幕大小" class="headerlink" title="屏幕大小"></a>屏幕大小</h4><p><strong>屏幕对角的的长度</strong>。1 英寸 = 2.54 厘米，那么一个 5 寸的手机的对角线长度就是 <code>5 X 2.54 = 12.7</code> 厘米。</p>
+<h4 id="分辨率"><a href="#分辨率" class="headerlink" title="分辨率"></a>分辨率</h4><p>屏幕的<strong>像素点个数</strong>，例如：一个屏幕的分辨率为 <code>320 * 480</code> 即这个屏幕上有 <code>320 X 480</code> 个像素点。</p>
+<h4 id="px-pixels"><a href="#px-pixels" class="headerlink" title="px(pixels)"></a>px(pixels)</h4><p><code>1px = 1inch * 1/96</code> (在一臂观察距离下，20inch)。 px 像素是 Web 开发中常用的单位。 1px 代表屏幕上一个<strong>物理像素点</strong>，在不同分辨率的设备上像素点的大小不同，同尺寸的屏幕分辨率越高，像素点越小，反之越大。</p>
+<h4 id="pt-point"><a href="#pt-point" class="headerlink" title="pt(point)"></a>pt(point)</h4><p>是一个标准的长度单位，<code>1pt ＝ 1 / 72英寸</code>， ios 开发使用的单位。 pt 同时也是印刷行业常用单位，能够使用测量设备测得的长度。</p>
+<h4 id="ppi-pixels-per-inch"><a href="#ppi-pixels-per-inch" class="headerlink" title="ppi(pixels per inch)"></a>ppi(pixels per inch)</h4><p>即像素密度，它标志<strong>每英寸屏幕上有多少个设备像素点</strong>，ppi 越大，屏幕的分辨率越高，显示画面细节越丰富。计算公式为：$\frac{\sqrt{(W^2+H^2)}}{S}$，其中 W 和 H 是分辨率的宽高， S 是屏幕尺寸。</p>
+<h4 id="dpi-dot-per-inch"><a href="#dpi-dot-per-inch" class="headerlink" title="dpi(dot per inch)"></a>dpi(dot per inch)</h4><p>dpi 和 ppi 的概念相似，指打印设备<code>每英寸印刷出来的点</code>有多少个，值越高，图片越细腻。</p>
+<h4 id="dip-device-independent-pixels"><a href="#dip-device-independent-pixels" class="headerlink" title="dip(device independent pixels)"></a>dip(device independent pixels)</h4><p>dp ，是<strong>设备独立像素</strong>，也叫逻辑像素，又称密度无关像素。它是一个逻辑单位，即无论图形在屏幕上如何缩放，它们始终都有一个不变的逻辑尺寸。不同坐标系或不同系统，会有自己对应的设备独立像素。</p>
+<h4 id="dpr-devicePixelRatio"><a href="#dpr-devicePixelRatio" class="headerlink" title="dpr(devicePixelRatio)"></a>dpr(devicePixelRatio)</h4><p><strong>设备物理像素和设备独立像素比</strong>，即$dpr =\frac{物理像素}{css像素}$是指在理想布局宽度，使用多少个物理像素来渲染一个 css 像素。 dpr 越高，屏幕的单位尺寸内设备像素越多，显示内容越细腻。</p>
+<h3 id="相关获取"><a href="#相关获取" class="headerlink" title="相关获取"></a>相关获取</h3><ol>
+<li>屏幕的设备独立宽度</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> dipWidth = screen.width;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>屏幕的设备独立宽度</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> dipHight = screen.height;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>dpr</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> dpr = <span class="built_in">window</span>.devicePixelRatio;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>物理像素宽度</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> physicalWidth = dipWidth \* dpr;</span><br></pre></td></tr></table></figure>
+<p>css 中，通过 css 中通过<code>-webkit-device-pixel-ratio</code>,<code>-webkit-min-device-pixel-ratio</code>,<code>-webkit-max-device-pixel-ratio</code>进行媒体查询。</p>
+<ol>
+<li>物理像素高度</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> physicalHight = dipHeight * dpr;</span><br></pre></td></tr></table></figure>
+<h3 id="关于视口-viewport"><a href="#关于视口-viewport" class="headerlink" title="关于视口(viewport)"></a>关于视口(viewport)</h3><p>移动端涉及<strong>布局视口(Layout Viewport)、视觉视口(Visual ViewPort)和理想视口(Ideal ViewPort)</strong>。</p>
+<ul>
+<li><strong>布局视口(layout viewport)</strong>: 用于网⻚的布局。可以看作是 html 元素的上一级容器即顶级容器，默认情况或者将 html 元素的 width 属性设为 100% 时，会占满这个顶级容器，此时用<code>document.documentElement.clientWidth</code>获取到 html 元素的布局宽度也就是布局视口的宽度，使用媒体查询时 max-width 和 min-width 的值指的也是布局视口的宽。无论移动端浏览器是否进行了缩放、横纵切换，在⻚面初始化后，这个视口的大小将固定不变。</li>
+</ul>
+<blockquote>
+<p>layout viewport 并不是整个网⻚内容，它只是移动端适配手机小屏的逻辑视口。布局视口的高度并不等于整个网⻚的高度，同时 position: fixed 的定位是基于布局视口的。</p>
+</blockquote>
+<ul>
+<li><strong>可视视口(visual viewport)</strong>: 用于展示当前屏幕内容。滑动屏幕、横纵切换、缩放操作等，实际上都是对可视视口的操作。</li>
+</ul>
+<blockquote>
+<p>相关操作：滑动⻚面 -&gt; 移动 visual viewport 的坐标；缩放⻚面 -&gt; 修改 visual viewport 的宽高；横纵屏切换 -&gt; 调换 visual viewport 的宽高，并映射。</p>
+</blockquote>
+<ul>
+<li><strong>理想视口(Ideal ViewPort)</strong>: 是屏幕分辨率的值，即对设备来说是最理想的布局视口，用户不需要对页面进行缩放就能完美的显示整个页面。最简单的做法就是使布局视口宽度设置为手机屏幕的宽度。通过设置<code>&lt;meta name = &quot;viewport&quot; content = &quot;width = device-width, initial-scale = 1.0&quot;&gt;</code>实现。</li>
+</ul>
+<h3 id="关于-lt-meta-gt-标签"><a href="#关于-lt-meta-gt-标签" class="headerlink" title="关于&lt;meta&gt;标签"></a>关于<code>&lt;meta&gt;</code>标签</h3><p><code>&lt;meta&gt;</code>标签中定义了一些元数据信息，通过设置<code>&lt;meta name = &quot;viewport&quot;&gt;</code>，提供有关视口初始大小的信息，供移动设备使用。属性值为:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>width</code></td>
+<td>数值 / <code>device-width</code></td>
+<td>视口宽度</td>
+</tr>
+<tr>
+<td><code>height</code></td>
+<td>数值 / <code>device-height</code></td>
+<td>视口高度</td>
+</tr>
+<tr>
+<td><code>initial-scale</code></td>
+<td>0.0 ~ 10.0</td>
+<td>设备宽度与视口大小间缩放比例(初始值)</td>
+</tr>
+<tr>
+<td><code>maximum-scale</code></td>
+<td>0.0 ~ 10.0</td>
+<td>缩放最大值</td>
+</tr>
+<tr>
+<td><code>minimum-scale</code></td>
+<td>0.0 ~ 10.0</td>
+<td>缩放最小值</td>
+</tr>
+<tr>
+<td><code>user-scalable</code></td>
+<td>Boolean 类型</td>
+<td>能否缩放页面，默认<code>yes｜1</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="适配方案"><a href="#适配方案" class="headerlink" title="适配方案"></a>适配方案</h3><h4 id="多媒体查询-media"><a href="#多媒体查询-media" class="headerlink" title="多媒体查询@media"></a>多媒体查询@media</h4><p><code>多媒体查询@media</code>：通过给不同分辨率的设备编写不同的样式实现响应式布局，解决不同设备不同分辨率之间的兼容，一般是 PC、平板、手机设备之间较大的分辨率差异。优点是能够实现不仅仅是样式伸缩变换的样式改变。缺点是要匹配足够多的设备与屏幕，工作量大；达到断点变化明显，用户体验不好。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 屏幕可视窗口尺寸小于 480 像素时 font-size: 16px</span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">max-width:</span> <span class="number">480px</span>) &#123;</span><br><span class="line">  <span class="selector-tag">html</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">16px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">// 屏幕可视窗口尺寸大于 480 像素时 font-size: 24px;</span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">min-width:</span> <span class="number">480px</span>) &#123;</span><br><span class="line">  <span class="selector-tag">html</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">24px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="vw、vh、vmin、vmax"><a href="#vw、vh、vmin、vmax" class="headerlink" title="vw、vh、vmin、vmax"></a>vw、vh、vmin、vmax</h4><p><code>vw、vh、vmin、vmax</code>：<code>vw</code>：是 viewport width 的简写，是可视区域尺寸的相对单位，1vw 相当于 1% 的可视区域的宽度；<code>vh</code>: 是 viewport height 的简写，是可视区域尺寸的相对单位， 1vh 相当于 1% 的可视区域的高度；<code>vmin</code>: 当前 vh 和 vw 的最小值；<code>vmax</code>：当前 vh 和 vw 的最大值。使得元素能够随视口大小自适应调整，是纯 css 移动端适配方案，不存在脚本依赖问题。但是存在一些兼容性问题，在 Android 4.4 / iOS 8 以下不支持。</p>
+<h4 id="rem"><a href="#rem" class="headerlink" title="rem"></a>rem</h4><p><code>rem</code>：rem 是相对长度单位， rem 方案中的样式设计为相对于根元素(html) font-size 计算值的倍数。在布局时使用 rem 单位布局，达到自适应的目的，实现弹性布局。但是 rem 布局存在以下问题：不是纯 css 移动适配方案，需要引入 js 脚本 在头部内嵌一段 js 脚本监听分辨率的变化来动态改变根元素的字体大小，css 样式和 js 代码有一定耦合，并且必须将改变 font-size 的代码放在 css 样式前。同时浏览器渲染最小单位是像素，元素根据屏幕宽度自适应，通过 rem 计算后可能会出现小数像素，浏览器会对这部分小数四舍五入，按照整数渲染。会出现<strong>小数像素</strong>的问题，我们可以指定最小转换像素，对于比较小的像素，不转换为 rem 或 vw 解决。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.documentElement.style.fontSize =</span><br><span class="line">  <span class="built_in">document</span>.documentElement.clientWidth / <span class="number">750</span> + <span class="string">"px"</span>;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>通过@media 改变 font-size 值，和使用 vw / wh 设置 font-size 的大小同样可以改变上面讲到的 rem 相对长度</p>
+</blockquote>
+<h4 id="px-自动转换为-vw"><a href="#px-自动转换为-vw" class="headerlink" title="px 自动转换为 vw"></a>px 自动转换为 vw</h4><p><code>px自动转换为vw</code>：设计师一般给宽度大小为 750px 的视觉稿，我们采用 vw 方案的话，需要将对应的元素大小单位 px 转换为 vw 单位，这是一项影响开发效率（需要手动计算将 px 转换为 vw）且不利于后续代码维护的工作。这时可以使用 <a href="https://github.com/evrone/postcss-px-to-viewport" target="_blank" rel="noopener">postcss-px-to-viewport</a> 插件，将 px 自动转换为 vw。</p>
+<h3 id="一些适配问题"><a href="#一些适配问题" class="headerlink" title="一些适配问题"></a>一些适配问题</h3><ol>
+<li><strong>1px 的问题</strong>：1 px 问题指的是在视觉设计师眼里的 1px 是指设备像素 1px，而如果我们直接写 css 的大小 1px，那在 dpr = 2 时，则等于 2px 设备像素，dpr = 3 时，等于 3px 设备像素。所以对于要求处理 1px 的场景，我们要进行特殊处理。</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 解决方案，使用 transform: scale(0.5) + :before / :after</span><br><span class="line"><span class="selector-class">.calss</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  &amp;::after &#123;</span><br><span class="line">    <span class="selector-tag">content</span>: "";</span><br><span class="line">    <span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>;</span><br><span class="line">    <span class="selector-tag">bottom</span>: 0<span class="selector-tag">px</span>;</span><br><span class="line">    <span class="selector-tag">left</span>: 0<span class="selector-tag">px</span>;</span><br><span class="line">    <span class="selector-tag">right</span>: 0<span class="selector-tag">px</span>;</span><br><span class="line">    <span class="selector-tag">border-top</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-id">#666</span>;</span><br><span class="line">    <span class="selector-tag">transform</span>: <span class="selector-tag">scaleY</span>(0<span class="selector-class">.5</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li><strong>图片高清的问题</strong>：适用普通屏的图片在高清屏中展示模糊，适用高清屏的图片在普通屏中，展示缺少色差、没有锐利度，并且浪费带宽。</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 解决方案，对不同 dpr 屏幕使用不同 image 图片 */</span></span><br><span class="line"><span class="selector-attr">[data-dpr=<span class="string">"1"</span>]</span> <span class="selector-class">.class</span> &#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(image@<span class="number">1</span>x.jpg);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-attr">[data-dpr=<span class="string">"2"</span>]</span> <span class="selector-class">.class</span> &#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(image@<span class="number">2</span>x.jpg);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-attr">[data-dpr=<span class="string">"3"</span>]</span> <span class="selector-class">.class</span> &#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(image@<span class="number">3</span>x.jpg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/promise.html" data-toggle="tooltip" data-placement="top" title="进一步理解Promise对象(Promise)">Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/optimization.html" data-toggle="tooltip" data-placement="top" title="前端性能优化(Performance Optimization)">Next Post</a>
+                    </li>
+                    
+                </ul>
+
+                <!-- tip start -->
+                
+
+                
+                <!-- tip end -->
+
+                <!-- Music start-->
+                
+                <!-- Music end -->
+
+                <!-- Sharing -->
+                
+                <!-- Sharing -->
+
+                <!-- gitment start -->
+                
+                <!-- gitment end -->
+
+                <!-- 来必力City版安装代码 -->
+                
+                <!-- City版安装代码已完成 -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+            </div>
+
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      
+        <aside id="sidebar">
+          <div id="toc" class="toc-article">
+          <strong class="toc-title">文章目录：</strong>
+          
+            
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#移动端适配-mobile-terminal-adaptation"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">移动端适配(mobile terminal adaptation)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#前言"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#几个基本概念"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">几个基本概念</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#屏幕大小"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">屏幕大小</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#分辨率"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">分辨率</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#px-pixels"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">px(pixels)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#pt-point"><span class="toc-nav-number">1.2.4.</span> <span class="toc-nav-text">pt(point)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#ppi-pixels-per-inch"><span class="toc-nav-number">1.2.5.</span> <span class="toc-nav-text">ppi(pixels per inch)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#dpi-dot-per-inch"><span class="toc-nav-number">1.2.6.</span> <span class="toc-nav-text">dpi(dot per inch)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#dip-device-independent-pixels"><span class="toc-nav-number">1.2.7.</span> <span class="toc-nav-text">dip(device independent pixels)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#dpr-devicePixelRatio"><span class="toc-nav-number">1.2.8.</span> <span class="toc-nav-text">dpr(devicePixelRatio)</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#相关获取"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">相关获取</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#关于视口-viewport"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">关于视口(viewport)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#关于-lt-meta-gt-标签"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">关于&lt;meta&gt;标签</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#适配方案"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">适配方案</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#多媒体查询-media"><span class="toc-nav-number">1.6.1.</span> <span class="toc-nav-text">多媒体查询@media</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#vw、vh、vmin、vmax"><span class="toc-nav-number">1.6.2.</span> <span class="toc-nav-text">vw、vh、vmin、vmax</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#rem"><span class="toc-nav-number">1.6.3.</span> <span class="toc-nav-text">rem</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#px-自动转换为-vw"><span class="toc-nav-number">1.6.4.</span> <span class="toc-nav-text">px 自动转换为 vw</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#一些适配问题"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">一些适配问题</span></a></li></ol></li></ol>
+            
+          
+          </div>
+        </aside>
+      
+    
+
+
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: '♯'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+
+
+<style  type="text/css">
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank"  href="tencent://message/?Menu=yes&uin=825906196">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-qq fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a class="social weixin"  href="javascript:">  
+                           <!-- javascript:表示标签作为按钮使用，不做跳转，实现url访问拦截。 -->
+                            <img class="qrcode" src="img/wechat.png" alt="微信二维码">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-wechat fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/Whiskeyi">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="mailto:zhuchjie@gmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted text-center">
+                    Copyright &copy;
+                    <a href="https://zhuchj.com">
+                        <i>zhuchj</i>
+                    </a>|
+                    2020-2023
+                    All Rights Reserved.
+                    <br>
+                    备案号：浙ICP备2020041949号-1|
+                    <iframe name="star" style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0"
+                        width="60px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=Whiskeyi&repo=Whiskeyi.github.io&type=star">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- Search -->
+
+<script src="/js/search.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://zhuchj.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Search -->
+
+    <script type="text/javascript">      
+        var search_path = "search.xml";
+        if (search_path.length == 0) {
+            search_path = "search.xml";
+        }
+    var path = "/" + search_path;
+    searchFunc(path, 'local-search-input', 'local-search-result');
+    </script>
+
+
+<!-- busuanzi -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+
+    
+
+    <!--<script size="50" alpha='0.3' zIndex="-999" src="/js/ribbonStatic.js"></script>-->
+    
+        <script src="/js/ribbonDynamic.js"></script>
+    
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+
+</html>

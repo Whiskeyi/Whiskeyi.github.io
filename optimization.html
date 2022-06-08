@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="baidu-site-verification" content="093lY4ziMu" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!--<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
+    <title>
+        
+          前端性能优化(Performance Optimization) - ZHUCHJ
+        
+    </title>
+
+    <link rel="canonical" href="https://zhuchj.com/optimization.html">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS --> 
+    
+        
+<link rel="stylesheet" href="/css/dusign-light.css">
+
+        
+<link rel="stylesheet" href="/css/dusign-common-light.css">
+
+        
+<link rel="stylesheet" href="/css/font-awesome.css">
+
+        
+<link rel="stylesheet" href="/css/toc.css">
+
+        <!-- background effects end -->
+    
+    
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    
+<link rel="stylesheet" href="/css/widget.css">
+
+
+    
+<link rel="stylesheet" href="/css/rocket.css">
+
+
+    
+<link rel="stylesheet" href="/css/signature.css">
+
+
+    
+<link rel="stylesheet" href="/css/fonts.googleapis.css">
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <!-- photography -->
+    
+<link rel="stylesheet" href="/css/photography.css">
+
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- background effects start -->
+    
+    <!-- background effects end -->
+
+	<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            
+                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('img/optimization/head.jpg')
+                /*post*/
+            
+        
+    }
+    
+    #signature{
+        background-image: url('/img/signature/dusign.png');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#JS" title="JS">JS</a>
+                            
+                              <a class="tag" href="/tags/#CSS" title="CSS">CSS</a>
+                            
+                              <a class="tag" href="/tags/#HTML" title="HTML">HTML</a>
+                            
+                        </div>
+                        <h1>前端性能优化(Performance Optimization)</h1>
+                        <h2 class="subheading">HTML &amp; CSS &amp; JS</h2>
+                        <span class="meta">
+                            由 Whiskeyi 于
+                            2022-02-28 发布
+                        </span>
+
+                        
+                            <div class="blank_box"></div>
+                            <span class="meta">
+                                全文 <span class="post-count">5.8k</span> 字，
+                                阅读约需 <span class="post-count">21</span> 分钟
+                            </span>
+                            <div class="blank_box"></div>
+                            <!-- 不蒜子统计 start -->
+                            <span class="meta">
+                                浏览 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> 次
+                            </span>
+                            <!-- 不蒜子统计 end -->
+                        
+
+                    </div>
+                
+
+                </div>
+            </div>
+        </div>      
+    </div>
+
+    
+</header>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+    var boxObj = document.getElementById('words');
+    if (boxObj) {
+        new Typed(boxObj,{
+        strings: ['Whiskeyi&#39;s Blog'],
+        typeSpeed: 160,
+        startDelay: 100,
+        loop: false,
+        loopCount: Infinity,
+        cursorChar: '|' // 
+        });
+    }
+ </script>
+
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">ZHUCHJ</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/photography/">摄影</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">关于</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">归档</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">标签</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/categories/">分类</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h2 id="前端性能优化-performance-optimization"><a href="#前端性能优化-performance-optimization" class="headerlink" title="前端性能优化(performance optimization)"></a>前端性能优化(performance optimization)</h2><h3 id="说在最前面"><a href="#说在最前面" class="headerlink" title="说在最前面"></a>说在最前面</h3><p>性能是前端开发一个非常重要的组成部分，与应用不同，网页的所有资源初始都需要通过网络传输，因此如何进行更好地进行网络传输对前端性能影响很大，此外还有浏览器渲染部分的优化。而在另一方面，对于用户来说，给网站添加加载或者过渡动画，让用户能够在等待中给予反馈(而不是生硬的白屏)，其实也可以看作为一种不一样的“性能优化”，下面文章将主要描述前端在网路传输和浏览器渲染等过程中如何进行性能优化，为用户带来更好的体验。另外，<strong>由于前端性能优化涉及的知识点比较多，全文篇幅较长，希望你能有所收获～</strong></p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在描述前端性能优化前，我们需要了解一个常谈的问题：</p>
+<blockquote>
+<p>从输入 URL 到页面加载完成，发生了什么?</p>
+</blockquote>
+<p>这个问题很重要，因为文章性能优化的各个点将由这个过程展开。下面我们来简单回顾一下整个过程(其中涉及到计算机网络的知识点，由于文章主要讲性能优化，这里不做具体展开：</p>
+<ol>
+<li>浏览器的地址栏输入 URL 并跳转访问</li>
+<li>浏览器查找当前 URL 是否存在缓存并且未清空和过期</li>
+<li>DNS 解析 URL 对应的 IP</li>
+<li>根据 IP 建立 TCP 连接（三次握手）</li>
+<li>HTTP 发起请求</li>
+<li>服务器处理请求，浏览器接收 HTTP 响应</li>
+<li>渲染页面，构建 DOM 树</li>
+<li>关闭 TCP 连接（四次挥手）</li>
+</ol>
+<p>在进行下文阅读前，如果对过程不是很理解的话，推荐阅读<a href="https://juejin.cn/post/6844904132071915527" target="_blank" rel="noopener">掘金文章-网络通信</a>和<a href="https://juejin.cn/post/6844904132071915527" target="_blank" rel="noopener">掘金文章-页面渲染</a>两篇文章。</p>
+<h3 id="如何优化-DNS-预解析-DNS-Prefetch"><a href="#如何优化-DNS-预解析-DNS-Prefetch" class="headerlink" title="如何优化-DNS 预解析(DNS Prefetch)"></a>如何优化-DNS 预解析(DNS Prefetch)</h3><p><strong>DNS 预解析介绍:</strong></p>
+<p><code>DNS(Domain Name System, 域名系统)</code>，是域名和 IP 地址相互映射的一个分布式数据库。DNS 查询就是将域名转换成 IP 的过程，这个过程短的话可能 1ms(本地缓存)对用户来说几乎无感，长则可能达到几秒钟。<br>   当浏览器访问一个域名的时候，需要解析一次 DNS，获得对应域名的 ip 地址。在解析过程中，按照浏览器缓存、系统缓存、路由器缓存、ISP(运营商) DNS 缓存、根域名服务器、顶级域名服务器、主域名服务器的顺序，逐步读取缓存，直到拿到该域名的 IP 地址。<br>  <code>DNS预解析(DNS Prefetch)</code>，就是根据浏览器定义的规则，提前解析之后可能会用到的域名，使解析结果缓存到系统缓存中，缩短 DNS 解析时间，来提高网站的访问速度。</p>
+<p>DNS 预解析会做两件事：</p>
+<ul>
+<li>html 源码下载完成后，会解析页面的包含链接的标签，提前查询对应的域名。</li>
+<li>对于访问过的页面，浏览器会记录一份域名列表，当再次打开时，会在 html 下载的同时去解析 DNS。</li>
+</ul>
+<p><strong>DNS 预解析使用:</strong></p>
+<p>下面介绍两种 DNS 预解析方式：</p>
+<ol>
+<li><code>自动解析</code>：浏览器使用超链接的 href 属性来查找要预解析的主机名。当遇到 a 标签，浏览器会自动将 href 中的域名解析为 IP 地址，这个解析过程是与用户浏览网页并行处理的。但是为了确保安全性，在 HTTPS 页面中不会自动解析。可以通过以下代码可以手动开启：</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 当content为off是则为关闭 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"x-dns-prefetch-control"</span> <span class="attr">content</span>=<span class="string">"on"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><code>手动解析</code>：在页面添加标记，给 link 的 rel 设置<code>dns-prefetch</code>。</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"dns-prefetch"</span> <span class="attr">href</span>=<span class="string">"www.baidu.com"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>DNS 预解析总结:</strong></p>
+<p><code>DNS Prefetch</code> 可以有效缩短了 DNS 的解析时间，在应用于一些大量引用很多其他域名资源的网站，能够明显提升访问的速度。</p>
+<h3 id="如何优化-发送-HTTP-请求"><a href="#如何优化-发送-HTTP-请求" class="headerlink" title="如何优化-发送 HTTP 请求"></a>如何优化-发送 HTTP 请求</h3><p>我们知道，在访问一个网页时，会产生很多 HTTP 请求，那么如何来优化这部分的性能呢？我们有两个思路：<strong>减少请求次数</strong>和<strong>缩小请求体积</strong>以减少单次请求时间，下面我们具体分析这两个思路有哪些方法：</p>
+<h4 id="减少请求次数"><a href="#减少请求次数" class="headerlink" title="减少请求次数"></a>减少请求次数</h4><p><strong>将要请求的<code>资源合并</code>：</strong></p>
+<h5 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h5><ul>
+<li>使用 <code>webpack 静态模块打包工具</code>，借助 webpack 我们可以对项目 JS 和 CSS 资源进行打包，避免 JS 、 CSS 文件过多。</li>
+</ul>
+<h5 id="CSS-Sprites"><a href="#CSS-Sprites" class="headerlink" title="CSS Sprites"></a>CSS Sprites</h5><ul>
+<li>使用<code>雪碧图(CSS Sprites)，精灵图</code>。我们将多个小图合并为一张，在使用的时候利用 background-position 进行定位，相较于一个小图标一个图像文件，单独一张图片所需的 HTTP 请求更少，且对内存和带宽更加友好。</li>
+</ul>
+<blockquote>
+<p>和雪碧图一样，Base64 也是为了减少加载网页图片时对服务器的请求次数，从而提升网页性能。</p>
+</blockquote>
+<h5 id="WebStorage"><a href="#WebStorage" class="headerlink" title="WebStorage"></a>WebStorage</h5><p>使用<code>WebStorage</code>：WebStorage 有两种， sessionStorage 和 localStorage ，大小在 5-10M 之间，都是以键值对的方式进行存储。我们可以将一些请求获得的数据存储在 WebStorage 中，这样可以避免同样的数据两次请求。要注意的是 sessionStorage 与 localStorage 的不同在于生命周期的不同， sessionStorage 在 tab 关闭后，就不再存在了，而 localStorage 的永久存储，除非主动删除。</p>
+<h5 id="IndexDB"><a href="#IndexDB" class="headerlink" title="IndexDB"></a>IndexDB</h5><p>使用<code>IndexDB</code>： IndexDB 是一个运行在浏览器上的非关系型数据库，相比 WebStorage，它可以存储大量的数据。</p>
+<h5 id="HTTP-Cache"><a href="#HTTP-Cache" class="headerlink" title="HTTP Cache"></a>HTTP Cache</h5><ul>
+<li>使用 <code>HTTP Cache</code>机制：HTTP 缓存分为强缓存和协商缓存。优先级较高的是强缓存，在未命中强缓存后下，走协商缓存。<ul>
+<li><code>强缓存</code>利用 http 头中的 expires 和 cache-control 两个字段控制，当请求再次发出时，浏览器会根据这两个字段判断目标资源是否“命中”强缓存，若命中则直接从缓存中获取资源，不会再与服务端发生通信。以此减少请求的次数。<blockquote>
+<p>强缓存的 expires 是一个时间戳，如果我们试图再次向服务器请求资源，浏览器对比本地时间和 expires 的时间戳，如果本地时间小于 expires 设定的过期时间，那么就直接去缓存中取这个资源。这样就会产生一个问题：如果本地时间不正确， expires 就无法达到我们预期的效果。 HTTP1.1，引入了 cache-control 字段，我们通过 <code>cache-control: max-age=1000</code> 来控制资源的有效期。 max-age 是一个时间长度。若 max-age 若为 1000 秒，则它指向的资源在 1000 秒以内都是有效的，规避了时间戳带来的潜在问题。</p>
+</blockquote>
+</li>
+<li><code>协商缓存</code>：协商缓存下，浏览器向服务器去询问缓存的相关信息，判断是重新发起请求、下载完整的响应，还是从本地获取缓存的资源。如果服务端提示缓存资源未改动(Not Modified)，资源会被重定向到浏览器缓存，这种情况下网络请求对应的状态码是 <code>304</code>。<blockquote>
+<p>协商缓存的字段 Last-Modified 也是一个时间戳，当我们启用协商缓存，它会在首次请求时随着 Response Headers 返回：<code>Last-Modified: Four, 3 Mar 2022 23:22:57 GMT</code>，随后每次请求时，会带上 If-Modified-Since 时间戳字段，它的值正是上一次 response 返回给它的 last-modified 值，服务器接时间戳后，会比对该时间戳和资源在服务器上的最后修改时间是否一致，从而判断资源是否发生了变化。如果发生了变化，会返回一个完整的响应内容，并在 Response Headers 中添加新的 Last-Modified 值；否则，返回 304 响应，并且不再添加 Last-Modified 字段。在使用 last-modified 时会有两个问题，无法检测我是否真的修改了文件和在很短时间里修改了文件，并未到 last-modified 检测时间间隔里。因此引入了 Etag，Etag 是由服务器为每个资源生成的唯一的标识字符串，这个标识字符串是基于文件内容编码的，只要文件内容不同，它们对应的 Etag 就是不同的。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="缩小请求体积"><a href="#缩小请求体积" class="headerlink" title="缩小请求体积"></a>缩小请求体积</h4><h5 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h5><ul>
+<li><code>不滥用Cookie</code>：Cookie 的本职工作并非本地存储，而是“维持状态“。Cookie 的体积上限只有<code>4KB</code>，一般来说存在于响应头里的 Set-Cookie 中，因此在同一个域名下的所有请求，都会携带 Cookie ，过量的 Cookie 会带来巨大的性能浪费。</li>
+</ul>
+<h5 id="Gzip-压缩"><a href="#Gzip-压缩" class="headerlink" title="Gzip 压缩"></a>Gzip 压缩</h5><p><code>使用Gzip</code>:传输的时候可以在服务器端开启 gzip 压缩(在响应头<code>request headers</code>加一句<code>accept-encoding:gzip</code>)，<code>content-encoding: gzip</code>可以有效减少传输文件的大小。</p>
+<blockquote>
+<p>现今也有使用 Content-Encoding: br 的压缩方法的，它是一种比 Gzip 压缩率更高的算法。压缩文件这个过程本身是需要耗费时间的，这是一种以服务器压缩的时间开销和 CPU 开销（和浏览器解析压缩文件的开销）为代价，省下了传输过程中的时间开销的方法。</p>
+</blockquote>
+<h5 id="代码压缩"><a href="#代码压缩" class="headerlink" title="代码压缩"></a>代码压缩</h5><ul>
+<li><code>代码压缩</code>：使用代码压缩工具，删除无用的注释、空行和缩减名称等以减少请求体积。</li>
+</ul>
+<h5 id="图片优化"><a href="#图片优化" class="headerlink" title="图片优化"></a>图片优化</h5><ul>
+<li><code>图片优化</code>：图片是网页上占用很多流量的一种资源。图片优化往往能将性能优化达到比较好的效果。一般我们有牺牲质量，压缩图片大小和裁剪图片两种方式：<ul>
+<li><code>压缩图片</code>：如果在图片损失一些颜色和像素的情况下并不会对用户体验有太大影响，我们可以对图片进行压缩。</li>
+<li><code>裁剪图片</code>：在一些图片不用完全显示等情况下，我们可以对图片做一些裁切和缩小等操作，来减小图片的体积。<blockquote>
+<p>图片选用正确的格式也可以算是一种图片优化等方法，网页图片的格式一般有 PNG、JPG、SVG、WEBP。SVG 为矢量图片，不失真，常用于简单图形；WEBP 压缩率一般比 PNG 和 JPG 更好，同时支持透明背景。缺点是兼容性不好，所以我们将 WEBP 可用于兼容性好的浏览器，并用 JPG 和 PNG 做回退机制。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="如何优化-页面渲染"><a href="#如何优化-页面渲染" class="headerlink" title="如何优化-页面渲染"></a>如何优化-页面渲染</h3><p>在上文，我们简单回答了从输入 URL 到页面加载完成，发生了什么这个问题，其中第七步页面渲染，构建 DOM 树有以下步骤：</p>
+<ol>
+<li>浏览器开始解析目标 HTML 文件,执行流的顺序为自上而下。</li>
+<li>HTML 解析器将 HTML 结构转换为基础的 DOM (文档对象模型),构建 DOM 树完成后,触发 DomContendLoaded 事件。</li>
+<li>CSS 解析器将 CSS 解析为 CSSOM (层叠样式表对象模型),一棵仅含有样式信息的树。</li>
+<li>CSSOM 和 DOM 开始合并构成渲染(render)树,每个节点开始包含具体的样式信息。</li>
+<li>计算渲染树中个各个节点的位置信息,即布局阶段。</li>
+<li>将布局后的渲染树显示到界面上。</li>
+</ol>
+<p>那么根据上述这些步骤，如何进行页面渲染的相关优化呢？下面介绍几块方法：浏览器下载完页面中的所有组件—— HTML 标记、JavaScript、CSS、图片之后会解析生成两个内部数据结构—— DOM 树和(render)渲染树。DOM 树表示页面结构，渲染树表示 DOM 节点如何显示。</p>
+<h4 id="减少渲染次数"><a href="#减少渲染次数" class="headerlink" title="减少渲染次数"></a>减少渲染次数</h4><ul>
+<li><code>减少渲染次数</code>：我们通过尽量减少重排与重绘来减少渲染的次数。重排又称为回流，即通过某种手段改变了元素的位置大小等信息，导致浏览器需要重新计算和渲染的过程。而重绘是被改变了样式如颜色等。我们可以将将需要多次重排的元素(如动画等)，position 属性设为 absolute 或 fixed，这样元素就脱离了文档流，不会影响到其他元素。由于浏览器的流布局，对渲染树的计算通常只需要遍历一次就可以完成。但 table 及其内部元素除外，它可能需要多次计算才能确定好其在渲染树中节点的属性，通常要花 2 倍多于同等元素的时间。所以我们要尽量不用 table 布局。</li>
+</ul>
+<blockquote>
+<p>重排重绘具体定义：DOM 树中的每一个需要显示的节点在渲染树种中至少存在一个对应的节点(隐藏的 DOM 元素 display 值为 none 在渲染树中没有对应的节点)。渲染树中的节点被称为“帧”或“盒”，符合 CSS 模型的定义，理解页面元素为一个具有填充，边距，边框和位置的盒子。一旦 DOM 和渲染树构建完成，浏览器就开始显示（绘制）页面元素。当 DOM 的变化影响了元素的几何属性（宽或高），浏览器需要重新计算元素的几何属性，同样其他元素的几何属性和位置也会因此受到影响。浏览器会使渲染树中受到影响的部分失效，并重新构造渲染树。这个过程称为<code>重排</code>。完成重排后，浏览器会重新绘制受影响的部分到屏幕，该过程称为<code>重绘</code>。</p>
+</blockquote>
+<h4 id="减少渲染节点数量"><a href="#减少渲染节点数量" class="headerlink" title="减少渲染节点数量"></a>减少渲染节点数量</h4><p>减少渲染节点数量,可以用到懒加载、虚拟列表等方法。</p>
+<h5 id="懒加载"><a href="#懒加载" class="headerlink" title="懒加载"></a>懒加载</h5><ul>
+<li><code>懒加载</code>：当访问一个页面的时候，先不设或把 img 元素或是其他元素的图片路径替换成一张大小为 <code>1*1 px</code> 图片的路径（俗称占位图），当图片出现在浏览器的可视区域内时，才设置图片正真的路径，让图片显示出来，实现懒加载。那我们为什么要进行懒加载呢？在一些页面内容丰富、图片较多的场景下，如各种电商、长页面。这些页面的资源量很大，要是页面载入就一次性完成加载，需要不少的时间。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">      img &#123;</span><br><span class="line">        height: 450px;</span><br><span class="line">        display: block;</span><br><span class="line">        margin-bottom: 20px;</span><br><span class="line">      &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--这里不是用src，图片地址暂时先保存在data-src这个自定义属性上面--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">data-src</span>=<span class="string">"./img-lazy/img/1.jpg"</span> <span class="attr">alt</span>=<span class="string">"懒加载1"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">data-src</span>=<span class="string">"./img-lazy/img/2.png"</span> <span class="attr">alt</span>=<span class="string">"懒加载2"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">data-src</span>=<span class="string">"./img-lazy/img/3.jpg"</span> <span class="attr">alt</span>=<span class="string">"懒加载3"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">data-src</span>=<span class="string">"./img-lazy/img/4.jpg"</span> <span class="attr">alt</span>=<span class="string">"懒加载4"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">data-src</span>=<span class="string">"./img-lazy/img/5.jpg"</span> <span class="attr">alt</span>=<span class="string">"懒加载5"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在介绍下面代码前，需要掌握这几个属性：<br><code>clientHeight</code>：浏览器视口的高度(img.offsetTop)；<br><code>scrollTop</code>：滚动轴滚动的距离(document.documentElement.scrollTop)；<br><code>offsetTop</code>：元素的头部距离浏览器顶部的高度（不是距离视口顶部的高度）(document.documentElement.clientHeight)；</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> imgs = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"img"</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">lazyLoad</span>(<span class="params">imgs</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 视口的高度；</span></span><br><span class="line">  <span class="keyword">const</span> clientH = <span class="built_in">document</span>.documentElement.clientHeight;</span><br><span class="line">  <span class="comment">// 滚动的距离，这里的逻辑判断是为了作兼容性处理；</span></span><br><span class="line">  <span class="keyword">const</span> clientT = <span class="built_in">document</span>.documentElement.scrollTop || <span class="built_in">document</span>.body.scrollTop;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; imgs.length; i++) &#123;</span><br><span class="line">    <span class="comment">// 逻辑判断，若是视口高度 + 滚动距离 &gt; 图片到浏览器顶部的距离就去加载；</span></span><br><span class="line">    <span class="comment">// !imgs[i].src 目的是避免重复请求</span></span><br><span class="line">    <span class="keyword">if</span> (clientH + clientT &gt; imgs[i].offsetTop &amp;&amp; !imgs[i].src) &#123;</span><br><span class="line">      <span class="comment">// 使用data-xx的自定义属性能够经过dom元素的dataset.xx取得；</span></span><br><span class="line">      imgs[i].src = imgs[i].dataset.src;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 一开始可以加载显示在视口中的图片；</span></span><br><span class="line">lazyLoad(imgs);</span><br><span class="line"><span class="comment">// 监听滚动事件，加载后面的图片；</span></span><br><span class="line"><span class="built_in">window</span>.onscroll = <span class="function"><span class="params">()</span> =&gt;</span> lazyLoad(imgs);</span><br></pre></td></tr></table></figure>
+<p>有同学可能会发现，频繁触发的 scroll 事件会给浏览器形成很大的压力，这里我们可以对懒加载进行进一步优化，结合<a href="https://zhuchj.com/debounce.html">节流函数</a>进行进一步优化。</p>
+<h5 id="虚拟列表"><a href="#虚拟列表" class="headerlink" title="虚拟列表"></a>虚拟列表</h5><ul>
+<li><code>虚拟列表</code>：在一些情况下，我们会遇到需要一些不能使用分页方式来加载列表数据，而一次性加载大量数据会极其浪费时间，因为在实际的工作中，列表项是由复杂 DOM 节点组成的。虚拟列表类似懒加载是按需显示的一种实现，即只对可见区域进行渲染，对非可见区域中的数据不渲染或部分渲染的技术，从而达到极高的渲染性能。虚拟列表的实现，实际上就是在首屏加载的时候，只加载可视区域内需要的列表项，当滚动发生时，动态通过计算获得可视区域内的列表项，并将非可视区域内存在的列表项删除。这里看到了一篇不错的文章可供学习<a href="https://juejin.cn/post/6844903982742110216" target="_blank" rel="noopener">虚拟列表</a>。</li>
+</ul>
+<h4 id="减少阻塞"><a href="#减少阻塞" class="headerlink" title="减少阻塞"></a>减少阻塞</h4><h5 id="CSS-阻塞渲染"><a href="#CSS-阻塞渲染" class="headerlink" title="CSS 阻塞渲染"></a>CSS 阻塞渲染</h5><ul>
+<li><code>CSS阻塞渲染</code>：通常情况下 CSS 被认为是阻塞渲染的资源，在 CSSOM 构建完成之前，页面不会被渲染，放在顶部让样式表能够尽早开始加载。但如果把引入样式表的 link 放在文档底部，页面虽然能立刻呈现出来，但是页面加载出来的时候会是没有样式的，是混乱的。当后来样式表加载进来后，页面会立即进行重绘，会发生闪烁的问题。</li>
+</ul>
+<h5 id="JavaScript-阻塞文档解析"><a href="#JavaScript-阻塞文档解析" class="headerlink" title="JavaScript 阻塞文档解析"></a>JavaScript 阻塞文档解析</h5><ul>
+<li><code>JavaScript 阻塞文档解析</code>：当在 HTML 文档中遇到 script 标签后控制权将交给 JS，在 JS 下载并执行完成之前，都不会解析 HTML。因此如果将 JS 放在文档顶部，恰好这个时候 JS 脚本加载的特别慢，用户将会等待很长一段时间，这段时间 HTML 文档还没有解析到 body 部分，页面会是空白的。我们可以人为指定，哪些元素进行延迟加载，通过为 script 标签指定 async 或 defer 来延迟脚本。<ul>
+<li>async 表示 JS 不会阻塞，但会在下载完成后立刻执行。</li>
+<li>defer 则会在下载完成并且整个文档解析完成、DOMContentLoaded 事件被触发前开始执行。</li>
+</ul>
+</li>
+</ul>
+<h5 id="提高渲染效率"><a href="#提高渲染效率" class="headerlink" title="提高渲染效率"></a>提高渲染效率</h5><p><strong>提高渲染效率：</strong></p>
+<h6 id="减少对-DOM-操作"><a href="#减少对-DOM-操作" class="headerlink" title="减少对 DOM 操作"></a>减少对 DOM 操作</h6><ul>
+<li><code>减少对 DOM 操作</code>：因为 JS 引擎和渲染引擎需要交流，因此大量操作 DOM 很大程度上会影响整体的性能，这里建议除非遇到不可避免的情况下，除此之外我们尽量批量处理 DOM ,并且对于一些频繁操作 DOM 的可以结合防抖节流函数进行处理。</li>
+</ul>
+<h6 id="事件循环、异步更新"><a href="#事件循环、异步更新" class="headerlink" title="事件循环、异步更新"></a>事件循环、异步更新</h6><ul>
+<li><code>事件循环、异步更新</code>：我们常说 JS 是单线程的，之所以是单线程，是因为在浏览器渲染的过程中如果两个线程同时操作一个 DOM 节点，那么该谁先谁后呢，虽然多线程也有办法解决，但是 JS 毕竟是浏览器脚本语言，不需要那么复杂。由于 JS 的单线程性，有了事件循环 (Event Loop) 与异步更新策略。事件循环中的异步队列分为：macro（宏任务）队列和 micro（微任务）队列。他们的区别是，当 macro-task 出队时，任务是一个一个执行的；而 micro-task 出队时，任务一队一队执行。所以，处理 micro 队列时会逐个执行队列中的任务并把它出队，直到队列被清空。良好的利用事件循环和异步更新，可以提高浏览器的渲染效率。</li>
+</ul>
+<h3 id="其它补充"><a href="#其它补充" class="headerlink" title="其它补充"></a>其它补充</h3><h4 id="性能指标-amp-模型"><a href="#性能指标-amp-模型" class="headerlink" title="性能指标 &amp; 模型"></a>性能指标 &amp; 模型</h4><ul>
+<li><strong>性能指标 &amp; 模型</strong>：<ul>
+<li><code>性能指标</code>：<ol>
+<li>First Paint 首次绘制(FP)：用于记录页面第一次绘制像素的时间。</li>
+<li>First contentful paint 首次内容绘制 (FCP)：用于记录页面首次绘制文本、图片、非空白 Canvas 或 SVG 的时间。</li>
+<li>Largest contentful paint 最大内容绘制 (LCP)：记录视窗内最大的元素绘制的时间。</li>
+<li>First input delay 首次输入延迟 (FID)：FCP 和 TTI 之间用户首次与页面交互时响应的延迟。</li>
+<li>Time to Interactive 可交互时间 (TTI)：指标代表着页面何时真正进入可用的状态。</li>
+<li>Total blocking time 总阻塞时间 (TBT)：记录在 FCP 到 TTI 之间所有长任务的阻塞时间总和。</li>
+<li>Cumulative layout shift 累积布局偏移 (CLS)：记录页面非预期的位移波动。</li>
+</ol>
+</li>
+<li><code>RAIL 模型(简述)</code>：RAIL 模型由 Google 提出，RAIL 是 response （响应）、 animation（动画）、idle（浏览器空置状态）和 load（加载），从这四个模块角度来思考你的产品。如果在每个模块上，你都可以达到性能优化的目标值，那么最终用户感受到的将会是极致的体验。</li>
+</ul>
+</li>
+</ul>
+<h4 id="首屏时间"><a href="#首屏时间" class="headerlink" title="首屏时间"></a>首屏时间</h4><ul>
+<li><strong>首屏时间</strong>：首屏时间是指页面第一屏所有资源完整展示的时间(可以理解为白屏时间 + 第一次渲染的用时)。这是一个对用户来说非常直接的体验指标，但是对于前端却是一个非常难以统计衡量的指标。上文说到了很多优化首屏时间的方法，说到首屏时间让我想起了我们学校公众号的校园码，对于这种要及时展示使用的场景，特别需要优化首屏时间，而我们学校的校园码展示出来前却需要加载很多资源。</li>
+</ul>
+<h4 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h4><ul>
+<li><strong>CDN 加速(内容分发网络)</strong>：CDN(content delivery network)是一组分布在多个不同地理位置的 Web 服务器。我们都知道，当服务器离用户越远时，延迟越高。CDN 就是为了解决这一问题，在多个位置部署服务器，将用户网址的内容存储下来，根据用户请求的位置选择离用户近的服务器，降低网络拥塞，提高用户访问速度和命中率，从而缩短请求时间。它主要的关键技术是内容存储和分发技术。通过实测，我的博客配置了 CDN 加速后速度有明显的提升。</li>
+</ul>
+<h4 id="性能监控"><a href="#性能监控" class="headerlink" title="性能监控"></a>性能监控</h4><ul>
+<li><strong>性能监控</strong>：待补充</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>在对于我的博客优化过程中，我使用到了 Google 的 <a href="https://developers.google.com/speed" target="_blank" rel="noopener">PageSpeed Insights</a> 工具，从初始的评分 68 优化到最终评分 99 分,如图:</p>
+<p><img src="img/optimization/blog.jpg" alt="blog"></p>
+<p>这篇文章总体介绍了前端性能优化的种种方法，但同时在这些方法中，有些方法不仅仅能够提高前端的性能，同时还能为服务器降低压力、降低流量的使用等等，可以说是一劳多得。</p>
+
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/mobile.html" data-toggle="tooltip" data-placement="top" title="移动端适配(Mobile Terminal Adaptation)">Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/javaee.html" data-toggle="tooltip" data-placement="top" title="JavaEE">Next Post</a>
+                    </li>
+                    
+                </ul>
+
+                <!-- tip start -->
+                
+
+                
+                <!-- tip end -->
+
+                <!-- Music start-->
+                
+                <!-- Music end -->
+
+                <!-- Sharing -->
+                
+                <!-- Sharing -->
+
+                <!-- gitment start -->
+                
+                <!-- gitment end -->
+
+                <!-- 来必力City版安装代码 -->
+                
+                <!-- City版安装代码已完成 -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+            </div>
+
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      
+        <aside id="sidebar">
+          <div id="toc" class="toc-article">
+          <strong class="toc-title">文章目录：</strong>
+          
+            
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#前端性能优化-performance-optimization"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">前端性能优化(performance optimization)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#说在最前面"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">说在最前面</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#前言"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#如何优化-DNS-预解析-DNS-Prefetch"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">如何优化-DNS 预解析(DNS Prefetch)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#如何优化-发送-HTTP-请求"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">如何优化-发送 HTTP 请求</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#减少请求次数"><span class="toc-nav-number">1.4.1.</span> <span class="toc-nav-text">减少请求次数</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Webpack"><span class="toc-nav-number">1.4.1.1.</span> <span class="toc-nav-text">Webpack</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#CSS-Sprites"><span class="toc-nav-number">1.4.1.2.</span> <span class="toc-nav-text">CSS Sprites</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#WebStorage"><span class="toc-nav-number">1.4.1.3.</span> <span class="toc-nav-text">WebStorage</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#IndexDB"><span class="toc-nav-number">1.4.1.4.</span> <span class="toc-nav-text">IndexDB</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#HTTP-Cache"><span class="toc-nav-number">1.4.1.5.</span> <span class="toc-nav-text">HTTP Cache</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#缩小请求体积"><span class="toc-nav-number">1.4.2.</span> <span class="toc-nav-text">缩小请求体积</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Cookie"><span class="toc-nav-number">1.4.2.1.</span> <span class="toc-nav-text">Cookie</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Gzip-压缩"><span class="toc-nav-number">1.4.2.2.</span> <span class="toc-nav-text">Gzip 压缩</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#代码压缩"><span class="toc-nav-number">1.4.2.3.</span> <span class="toc-nav-text">代码压缩</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#图片优化"><span class="toc-nav-number">1.4.2.4.</span> <span class="toc-nav-text">图片优化</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#如何优化-页面渲染"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">如何优化-页面渲染</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#减少渲染次数"><span class="toc-nav-number">1.5.1.</span> <span class="toc-nav-text">减少渲染次数</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#减少渲染节点数量"><span class="toc-nav-number">1.5.2.</span> <span class="toc-nav-text">减少渲染节点数量</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#懒加载"><span class="toc-nav-number">1.5.2.1.</span> <span class="toc-nav-text">懒加载</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#虚拟列表"><span class="toc-nav-number">1.5.2.2.</span> <span class="toc-nav-text">虚拟列表</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#减少阻塞"><span class="toc-nav-number">1.5.3.</span> <span class="toc-nav-text">减少阻塞</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#CSS-阻塞渲染"><span class="toc-nav-number">1.5.3.1.</span> <span class="toc-nav-text">CSS 阻塞渲染</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#JavaScript-阻塞文档解析"><span class="toc-nav-number">1.5.3.2.</span> <span class="toc-nav-text">JavaScript 阻塞文档解析</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#提高渲染效率"><span class="toc-nav-number">1.5.3.3.</span> <span class="toc-nav-text">提高渲染效率</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#减少对-DOM-操作"><span class="toc-nav-number">1.5.3.3.1.</span> <span class="toc-nav-text">减少对 DOM 操作</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#事件循环、异步更新"><span class="toc-nav-number">1.5.3.3.2.</span> <span class="toc-nav-text">事件循环、异步更新</span></a></li></ol></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#其它补充"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">其它补充</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#性能指标-amp-模型"><span class="toc-nav-number">1.6.1.</span> <span class="toc-nav-text">性能指标 &amp; 模型</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#首屏时间"><span class="toc-nav-number">1.6.2.</span> <span class="toc-nav-text">首屏时间</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#CDN"><span class="toc-nav-number">1.6.3.</span> <span class="toc-nav-text">CDN</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#性能监控"><span class="toc-nav-number">1.6.4.</span> <span class="toc-nav-text">性能监控</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#总结"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">总结</span></a></li></ol></li></ol>
+            
+          
+          </div>
+        </aside>
+      
+    
+
+
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: '♯'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+
+
+<style  type="text/css">
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank"  href="tencent://message/?Menu=yes&uin=825906196">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-qq fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a class="social weixin"  href="javascript:">  
+                           <!-- javascript:表示标签作为按钮使用，不做跳转，实现url访问拦截。 -->
+                            <img class="qrcode" src="img/wechat.png" alt="微信二维码">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-wechat fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/Whiskeyi">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="mailto:zhuchjie@gmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted text-center">
+                    Copyright &copy;
+                    <a href="https://zhuchj.com">
+                        <i>zhuchj</i>
+                    </a>|
+                    2020-2023
+                    All Rights Reserved.
+                    <br>
+                    备案号：浙ICP备2020041949号-1|
+                    <iframe name="star" style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0"
+                        width="60px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=Whiskeyi&repo=Whiskeyi.github.io&type=star">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- Search -->
+
+<script src="/js/search.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://zhuchj.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Search -->
+
+    <script type="text/javascript">      
+        var search_path = "search.xml";
+        if (search_path.length == 0) {
+            search_path = "search.xml";
+        }
+    var path = "/" + search_path;
+    searchFunc(path, 'local-search-input', 'local-search-result');
+    </script>
+
+
+<!-- busuanzi -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+
+    
+
+    <!--<script size="50" alpha='0.3' zIndex="-999" src="/js/ribbonStatic.js"></script>-->
+    
+        <script src="/js/ribbonDynamic.js"></script>
+    
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+
+</html>

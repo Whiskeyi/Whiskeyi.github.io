@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="baidu-site-verification" content="093lY4ziMu" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!--<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
+    <title>
+        
+          系统集成优化(System integration and optimization) - ZHUCHJ
+        
+    </title>
+
+    <link rel="canonical" href="https://zhuchj.com/integration.html">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS --> 
+    
+        
+<link rel="stylesheet" href="/css/dusign-light.css">
+
+        
+<link rel="stylesheet" href="/css/dusign-common-light.css">
+
+        
+<link rel="stylesheet" href="/css/font-awesome.css">
+
+        
+<link rel="stylesheet" href="/css/toc.css">
+
+        <!-- background effects end -->
+    
+    
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    
+<link rel="stylesheet" href="/css/widget.css">
+
+
+    
+<link rel="stylesheet" href="/css/rocket.css">
+
+
+    
+<link rel="stylesheet" href="/css/signature.css">
+
+
+    
+<link rel="stylesheet" href="/css/fonts.googleapis.css">
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <!-- photography -->
+    
+<link rel="stylesheet" href="/css/photography.css">
+
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- background effects start -->
+    
+    <!-- background effects end -->
+
+	<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            
+                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('img/integration/head.jpg')
+                /*post*/
+            
+        
+    }
+    
+    #signature{
+        background-image: url('/img/signature/dusign.png');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#Java" title="Java">Java</a>
+                            
+                        </div>
+                        <h1>系统集成优化(System integration and optimization)</h1>
+                        <h2 class="subheading">系统集成优化学习笔记</h2>
+                        <span class="meta">
+                            由 Whiskeyi 于
+                            2022-06-04 发布
+                        </span>
+
+                        
+                            <div class="blank_box"></div>
+                            <span class="meta">
+                                全文 <span class="post-count">8.7k</span> 字，
+                                阅读约需 <span class="post-count">34</span> 分钟
+                            </span>
+                            <div class="blank_box"></div>
+                            <!-- 不蒜子统计 start -->
+                            <span class="meta">
+                                浏览 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> 次
+                            </span>
+                            <!-- 不蒜子统计 end -->
+                        
+
+                    </div>
+                
+
+                </div>
+            </div>
+        </div>      
+    </div>
+
+    
+</header>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+    var boxObj = document.getElementById('words');
+    if (boxObj) {
+        new Typed(boxObj,{
+        strings: ['Whiskeyi&#39;s Blog'],
+        typeSpeed: 160,
+        startDelay: 100,
+        loop: false,
+        loopCount: Infinity,
+        cursorChar: '|' // 
+        });
+    }
+ </script>
+
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">ZHUCHJ</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/photography/">摄影</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">关于</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">归档</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">标签</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/categories/">分类</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h2 id="系统集成优化"><a href="#系统集成优化" class="headerlink" title="系统集成优化"></a>系统集成优化</h2><h3 id="系统集成基础"><a href="#系统集成基础" class="headerlink" title="系统集成基础"></a>系统集成基础</h3><h4 id="系统集成基本含义"><a href="#系统集成基本含义" class="headerlink" title="系统集成基本含义"></a>系统集成基本含义</h4><p>系统集成( system integration)：通常是指将软件、硬件与通信技术组合起来为用户解决信息处理问题的业务，集成的各个分离部分原本就是一个个独立的系统，集成后的整体的各部分之间能彼此有机地和协调地工作，以发挥整体效益，达到整体优化的目的。</p>
+<h4 id="系统集成主要方案"><a href="#系统集成主要方案" class="headerlink" title="系统集成主要方案"></a>系统集成主要方案</h4><ul>
+<li><p>EAI：Enterprise Application Integration 企业应用集成，是中间件的一种，可完成企业内部基于各种不同平台、不同方案建立的异构应用集成互联，实现数据和信息在各个系统中同步和共享的一种方法和技术。</p>
+<p><img src="img/integration/图片 1.png" alt="图片1"></p>
+<ul>
+<li><p>Hub/spoke （集线器架构）：Hub/Spoke 架构是星型拓扑结构，由处于系统中央的一个 Hub 和连接在 Hub 及应用系统的多个适配器(adapter)组成。适配器在 Hub 和应用系统之间，进行数据格式的转换与传输。适配器将应用系统的数据信息转化为 Hub 可以识别的格式并传递给 Hub, Hub 通过消息代理管理消息路由，并将这些来自应用系统的数据消息按其要求的路由规则传递给目标应用系统的适配器。</p>
+<p><img src="img/integration/图片 2.png" alt="图片2"></p>
+</li>
+<li><p>BUS（总线架构）：可以看作是 Hub/Spoke 星型架构的一种变形。将星型中心点 Hub 的传输消息的功能提炼成一条消息传递总线，而将适配器、集成引擎绑在了应用系统所在的平台。应用程序使用适配器转换消息格式，并将消息发送到总线上。</p>
+<p><img src="img/integration/图片 3.png" alt="图片3"></p>
+</li>
+</ul>
+</li>
+<li><p>SOA：在分布式架构下，当服务越来越多，容量的评估，小服务资源的浪费等问题逐渐显现，增加了一个调度中心对集群进行实时管理。它将应用程序的不同功能单元（称为服务）通过这些服务之间定义良好的接口和契约联系起来。</p>
+<p><img src="img/integration/图片 4.png" alt="图片4"></p>
+</li>
+<li><p>微服务：微服务架构在某种程度上是面向服务的架构 SOA 继续发展的下一步，它更加强调服务的”彻底拆分”。</p>
+<p><img src="img/integration/图片 5.png" alt="图片5"></p>
+</li>
+</ul>
+<h3 id="Spring-Boot"><a href="#Spring-Boot" class="headerlink" title="Spring Boot"></a>Spring Boot</h3><h4 id="项目开发基本步骤"><a href="#项目开发基本步骤" class="headerlink" title="项目开发基本步骤"></a>项目开发基本步骤</h4><ul>
+<li>创建项目：File-New-Project，选择 Spring Initializer</li>
+<li>项目信息配置，选择需要的依赖[Web-Spring Web；SQL-Spring Data JPA,Mysql Driver]</li>
+<li>启动类配置</li>
+<li>配置类配置</li>
+<li>Web 层配置开发</li>
+<li>业务层配置开发</li>
+<li>数据层配置开发</li>
+<li>功能测试</li>
+</ul>
+<h4 id="项目特点与基本架构"><a href="#项目特点与基本架构" class="headerlink" title="项目特点与基本架构"></a>项目特点与基本架构</h4><h5 id="项目特点"><a href="#项目特点" class="headerlink" title="项目特点"></a>项目特点</h5><ol>
+<li><p>独立运行的 Spring 项目：Spring Boot 可以以 jar 包的形式独立运行，Spring Boot 项目只需通过命令“ java–jar xx.jar” 即可运行。</p>
+</li>
+<li><p>内嵌 Servlet 容器：Spring Boot 使用嵌入式的 Servlet 容器（例如 Tomcat、Jetty 或者 Undertow 等），应用无需打成 WAR 包 。</p>
+</li>
+<li><p>提供 starter 简化 Maven 配置：Spring Boot 提供了一系列的 starter 项目对象模型（POMS）来简化 Maven 配置。</p>
+</li>
+<li><p>提供了大量的自动配置：Spring Boot 提供了大量的默认自动配置，来简化项目的开发，开发人员也通过配置文件修改默认配置。</p>
+</li>
+<li><p>约定大于配置，开箱即用，无代码生成和 xml 配置：Spring Boot 不需要任何 xml 配置即可实现 Spring 的所有配置。</p>
+</li>
+</ol>
+<h5 id="基本架构"><a href="#基本架构" class="headerlink" title="基本架构"></a>基本架构</h5><ul>
+<li><p>启动类（@SpringBootApplication）：普通 java 类，位于项目根包下，main 函数入口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SpringBootP1Application</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(SpringBootP1Application<span class="class">.<span class="keyword">class</span>, <span class="title">args</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置文件：application.properties/.yml</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring</span>:<span class="string"></span></span><br><span class="line">  <span class="attr">datasource</span>:<span class="string"></span></span><br><span class="line">    <span class="meta">driver-class-name</span>: <span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line">    <span class="attr">url</span>: <span class="string">jdbc:mysql://localhost:3306/springbootp1</span></span><br><span class="line">    <span class="attr">username</span>: <span class="string">root</span></span><br><span class="line">    <span class="attr">password</span>: <span class="string">123</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Web 层配置开发：</p>
+<ol>
+<li><p>新增 controller 包</p>
+</li>
+<li><p>在 controller 包中创建用户控制器类（普通 java 类）</p>
+</li>
+<li><p>类上添加@RestController 注解，表示所有方法的处理结果都 JSON 对象响应，独立前端的后端接口</p>
+</li>
+<li><p>@ReqestMapping 注解类和方法</p>
+<ul>
+<li><p>@GetMapping 注解：处理 GET 请求，相当于 method= RequestMethod.GET</p>
+</li>
+<li><p>@PostMapping 注解：处理 POST 请求，相当于 method= RequestMethod.POST</p>
+</li>
+</ul>
+</li>
+<li><p>@RequestBody：JSON 请求</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"user"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserController</span> </span>&#123;</span><br><span class="line">  <span class="meta">@GetMapping</span>(<span class="string">"/&#123;id&#125;"</span>)</span><br><span class="line">  <span class="function"><span class="keyword">public</span> UserDto <span class="title">getUser</span> <span class="params">(@PathVariable <span class="keyword">int</span> id)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="meta">@PostMapping</span>(<span class="string">""</span>)</span><br><span class="line">  <span class="function"><span class="keyword">public</span> UserDto <span class="title">addUser</span> <span class="params">(@RequestBody UserDto user)</span></span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="meta">@GetMapping</span>(<span class="string">"list"</span>)</span><br><span class="line">  <span class="function"><span class="keyword">public</span> List&lt;UserDto&gt; <span class="title">allUsers</span><span class="params">()</span></span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">null</span>:</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>业务层开发：</p>
+<ol>
+<li><p>新增 service 和 dto 包，在 service 下新增 impl 子包</p>
+</li>
+<li><p>在 service 包中新建 service 接口</p>
+</li>
+<li><p>在 server.impl 包中添加 service 接口的相应实现类，并用@Service 注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="meta">@Transactional</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserServiceImpl</span> <span class="keyword">implements</span> <span class="title">UserServicel</span></span>&#123;</span><br><span class="line">  <span class="meta">@Autowired</span></span><br><span class="line">  UserDao userDao;</span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> List&lt;UserDto&gt; <span class="title">getAllUsers</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    List&lt;TuserEntity&gt; tusers=userDao.findAll);</span><br><span class="line">    <span class="keyword">return</span> e2d (tusers);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> UserDto <span class="title">getUser</span> <span class="params">(Integer id)</span> <span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">  	return e2d (userDao.getOne(id)</span>)</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在 dto 包中添加需要的 dto 类</p>
+</li>
+</ol>
+</li>
+<li><p>数据层开发：</p>
+<ol>
+<li>新增 dao 和 entity 包</li>
+<li>在 dao 包中新建 dao 接口，继承 JpaRepository</li>
+<li>在 entity 包中添加需要的实体类映射</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Setter</span></span><br><span class="line"><span class="meta">@Getter</span></span><br><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="meta">@Table</span> (name = <span class="string">"tuser"</span>,schema = <span class="string">"test"</span>, catalog = <span class="string">""</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TuserEntity</span> </span>&#123;</span><br><span class="line">  <span class="meta">@Id</span></span><br><span class="line">  <span class="keyword">private</span> Integer id;</span><br><span class="line">  <span class="meta">@Column</span></span><br><span class="line">  <span class="keyword">private</span> String name;</span><br><span class="line">  <span class="meta">@Column</span></span><br><span class="line">  <span class="keyword">private</span> String password;</span><br><span class="line">  <span class="meta">@Column</span></span><br><span class="line">  <span class="keyword">private</span> String email;</span><br><span class="line">  <span class="meta">@Column</span></span><br><span class="line">  <span class="keyword">private</span> String mobile;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="与-Spring-关系"><a href="#与-Spring-关系" class="headerlink" title="与 Spring 关系"></a>与 Spring 关系</h4><ul>
+<li><p>先有的 spring 框架，再有的 springboot 框架。因为基于 spring 的开发中，需要工程师写很多繁琐的配置文件，所以 spring 官方为了让开发者从配置文件中解放出来，在 spring 框架的基础上发明了 springboot 框架，springboot 体现了约定大于配置的理念，框架做了许多默认配置，同时集成了很多三方的框架，让开发者整合其他组件更加简单，我们可以说 Spring Boot 只是 Spring 本身的扩展，使开发，测试和部署更加方便。</p>
+</li>
+<li><p>Spring 框架为开发 Java 应用程序提供了全面的基础架构支持。它包含一些很好的功能，如依赖注入和开箱即用的模块，如： Spring JDBC 、Spring MVC 、Spring Security、 Spring AOP 、Spring ORM 、Spring Test，Spring Boot 基本上是 Spring 框架的扩展，它消除了设置 Spring 应用程序所需的 XML 配置，为更快，更高效的开发生态系统铺平了道路。</p>
+</li>
+</ul>
+<h4 id="Swagger-的作用及配置要"><a href="#Swagger-的作用及配置要" class="headerlink" title="Swagger 的作用及配置要"></a>Swagger 的作用及配置要</h4><ul>
+<li><p>作用：Swagger 是一个规范和完整的框架，用于生成、描述、测试和可视化 RESTful 风格的 Web 服务。</p>
+<ul>
+<li>接口的文档在线自动生成</li>
+<li>功能测试</li>
+<li>前后端开发人员联系的纽带</li>
+</ul>
+</li>
+<li><p>配置过程</p>
+<ul>
+<li><p>pom 中添加依赖（swagger、swagger-ui）</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>2.9.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger-ui<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>2.9.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新建 config 包，其中新建 SwaggerConfig 类，类上注解@Configuration、@EnableSwagger2</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line">  <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Knife4jConfig</span> </span>&#123;</span><br><span class="line">      <span class="meta">@Bean</span></span><br><span class="line">      <span class="function"><span class="keyword">public</span>  Docket <span class="title">createRestApi</span><span class="params">()</span> </span>&#123;</span><br><span class="line">          <span class="keyword">return</span>  <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2)</span><br><span class="line">            .useDefaultResponseMessages(<span class="keyword">false</span>)</span><br><span class="line">            .apiInfo(apiInfo())</span><br><span class="line">            .select()</span><br><span class="line">            .apis(RequestHandlerSelectors.basePackage(<span class="string">"com.example.springbootp1.controller"</span>))</span><br><span class="line">            .paths(PathSelectors.any())</span><br><span class="line">            .build();</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="function"><span class="keyword">private</span> ApiInfo <span class="title">apiInfo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">          <span class="keyword">return</span>  <span class="keyword">new</span> ApiInfoBuilder()</span><br><span class="line">            .description(<span class="string">"接口测试文档"</span>)</span><br><span class="line">            .contact(<span class="keyword">new</span> Contact(<span class="string">"Whiskey"</span>, <span class="string">"https://zhuchj.com"</span>,<span class="string">"825906196@qq.com"</span>))</span><br><span class="line">            .version(<span class="string">"1.0.0"</span>)</span><br><span class="line">            .description(<span class="string">"测试API"</span>)</span><br><span class="line">            .build();</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>swagger 注解</p>
+<ul>
+<li><p>@Api(tags=””)：在 controller 类上注解</p>
+<ul>
+<li>tags :说明该接口模块名称</li>
+</ul>
+</li>
+<li><p>@ApiOperation(value=””, notes=””)：在 controller 类中的方法前注解</p>
+<ul>
+<li>value：接口方法名称</li>
+<li>notes：接口方法说明</li>
+</ul>
+</li>
+<li><p>@ApiParam(“”)：在方法参数前注解，说明该参数含义</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Api</span>(tags=<span class="string">"用户管理模块接口"</span>)</span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"user"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserController</span> </span>&#123;</span><br><span class="line"><span class="meta">@Autowired</span></span><br><span class="line">UserServicel userService;</span><br><span class="line"><span class="meta">@ApiOperation</span>(valve = <span class="string">"单个用户"</span>, notes=<span class="string">"根据ID获取用户信息"</span>)</span><br><span class="line"><span class="meta">@GetMapping</span>(<span class="string">"/(id&#125;"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> UserDto <span class="title">getUser</span> <span class="params">(@ApiParam (<span class="string">"用户ID"</span>)</span> @PathVariable <span class="keyword">int</span> id) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> userService-getUser(id);</span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>@ApiModel：注解在 Dto 类上，说明 Dto 的用途</p>
+<ul>
+<li><p>@ApiModelProperty：注解在 Dto 类的字段上，说明该参数的含义</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@ApiModel</span>(<span class="string">"系统用户"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserDto</span> </span>&#123;</span><br><span class="line">  <span class="meta">@ApiModelProperty</span>(<span class="string">"用户ID"</span>)</span><br><span class="line">  <span class="keyword">private</span> Integer id;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="多模块-Maven-项目架构（父子模块操作）"><a href="#多模块-Maven-项目架构（父子模块操作）" class="headerlink" title="多模块 Maven 项目架构（父子模块操作）"></a>多模块 Maven 项目架构（父子模块操作）</h4><ul>
+<li><p>概念：随着单体应用功能的增加和细化，复杂度迅速增加。使用 Maven 的多模块配置，可以帮助项目划分模块，鼓励重用，防止 POM 变得过于庞大，方便某个模块的构建，而不用每次都构建整个项目，并且使得针对某个模块的特殊控制更为方便。</p>
+</li>
+<li><p>步骤</p>
+<ul>
+<li><p>新建 parent 项目（Project），只保留 pom.xml，在 GAV 配置下添加<code>&lt;packaging&gt;pom&lt;/packaging&gt;</code></p>
+</li>
+<li><p>在 parent 项目添加 modules</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">modules</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">module</span>&gt;</span>common<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">module</span>&gt;</span>user<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">module</span>&gt;</span>course<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line">		...</span><br><span class="line"><span class="tag">&lt;/<span class="name">modules</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新增模块（子项目，模块 pom 改为父项目 parent 的 GAV）</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="微服务"><a href="#微服务" class="headerlink" title="微服务"></a>微服务</h3><h4 id="微服务架构"><a href="#微服务架构" class="headerlink" title="微服务架构"></a>微服务架构</h4><p><img src="img/integration/图片 6.png" alt="图片6"></p>
+<ul>
+<li><p><strong>服务治理</strong>：服务治理就是进行服务的自动化管理，其核心是服务的自动注册与发现。</p>
+<ul>
+<li>服务注册：服务实例将自身服务信息注册到注册中心。</li>
+<li>服务发现：服务实例通过注册中心，获取到注册到其中的服务实例的信息，通过这些信息去请求它们提供的服务。</li>
+<li>服务剔除：服务注册中心将出问题的服务自动剔除到可用列表之外，使其不会被调用到。</li>
+</ul>
+</li>
+<li><p><strong>服务调用</strong>：在微服务架构中，通常存在多个服务之间的远程调用的需求。</p>
+<ul>
+<li>REST(Representational State Transfer)：这是一种 HTTP 调用的格式，更标准，更通用，无论哪种语言都支持 http 协议。</li>
+<li>RPC(Remote Promote Call)：一种进程间通信方式。允许像调用本地服务一样调用远程服务。RPC 框架的主要目标就是让远程服务调用更简单、透明。</li>
+</ul>
+</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>比较项</th>
+<th>RESTful</th>
+<th>RPC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>通讯协议</td>
+<td>HTTP</td>
+<td>一般使用 TCP</td>
+</tr>
+<tr>
+<td>性能</td>
+<td>略低</td>
+<td>较高</td>
+</tr>
+<tr>
+<td>灵活度</td>
+<td>高</td>
+<td>低</td>
+</tr>
+<tr>
+<td>应用</td>
+<td>微服务架构</td>
+<td>SOA 架构</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><p><strong>服务网关：</strong>随着微服务的不断增多，不同的微服务一般会有不同的网络地址，而外部客户端可能需要调用多个服务的接口才能完成一个业务需求，如果让客户端直接与各个微服务通信可能出现:</p>
+<ul>
+<li>客户端需要调用不同的 url 地址，增加难度。</li>
+<li>在一定的场景下，存在跨域请求。</li>
+<li>每个微服务都需要进行单独的身份认证等问题。</li>
+</ul>
+<p>API 网关将所有 API 调用统一接入到 API 网关层，由网关层统一接入和输出。一个网关的基本功能有:统一接入、安全防护、协议适配、流量管控、长短链接支持、容错能力。有了网关之后， 各个 API 服务提供团队可以专注于自己的的业务逻辑处理，而 API 网关更专注于安全、流量、路由等问题。</p>
+</li>
+<li><p><strong>服务容错</strong>：一个请求经常会涉及到调用几个服务，如果其中某个服务不可用，没有做服务容错的话，极有可能会造成一连串的服务不可用，这就是雪崩效应。服务容错有三个核心思想：</p>
+<ul>
+<li>不被上游请求压垮</li>
+<li>不被外界环境影响</li>
+<li>不被下游响应拖垮</li>
+</ul>
+</li>
+<li><p><strong>链路追踪</strong>：一次请求往往需要涉及到多个服务。互联网应用构建在不同的软件模块集上，这些软件模块，有可能是由不同的团队开发、可能使用不同的编程语言来实现、有可能布在了几千台服务器，横跨多个不同的数据中心。因此，就需要对一次请求涉及的多个服务链路进行日志记录，性能监控即链路追踪。</p>
+</li>
+<li><p><strong>负载均衡</strong></p>
+</li>
+<li><p><strong>消费者</strong>：服务的主动调用方</p>
+</li>
+<li><p><strong>提供者</strong>：服务的被调用方</p>
+</li>
+</ul>
+<h4 id="单体应用和微服务应用比较"><a href="#单体应用和微服务应用比较" class="headerlink" title="单体应用和微服务应用比较"></a>单体应用和微服务应用比较</h4><ul>
+<li><p>单体应用</p>
+<ul>
+<li><p>优点</p>
+<ol>
+<li>项目架构简单，前期开发成本低，周期短。</li>
+<li>开发效率高，模块之间可以本地调用。</li>
+<li>容易部署，运维成本小，为一个完整的包。</li>
+<li>单个应用容易测试。</li>
+</ol>
+</li>
+<li><p>缺点</p>
+<ol>
+<li><p>代码臃肿，应用启动时间长。</p>
+</li>
+<li><p>回归测试周期长，修复一个小小 bug 可能都需要对所有关键业务进行回归测试。</p>
+</li>
+<li>应用容错性差，某个小小功能的程序错误可能导致整个系统宕机；</li>
+<li>伸缩困难，单体应用扩展性能时只能整个应用进行扩展，造成计算资源浪费。</li>
+<li>开发协作困难，一个大型应用系统，可能几十个甚至上百个开发人员，大家都在维护一套代码的话，代码 merge 复杂度急剧增加。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>微服务应用</p>
+<ul>
+<li>优点<ol>
+<li>服务拆分粒度更细，有利于资源重复利用，提高开发效率。</li>
+<li>可以更加精准的制定每个服务的优化方案，按需伸缩。</li>
+<li>适用于互联网时代，产品迭代周期更短。</li>
+</ol>
+</li>
+<li>缺点<ol>
+<li>开发的复杂性增加，因为一个业务流程需要多个微服务通过网络交互来完成。</li>
+<li>微服务过多，服务治理成本高，不利于系统维护。</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="微服务技术框架"><a href="#微服务技术框架" class="headerlink" title="微服务技术框架"></a>微服务技术框架</h4><ul>
+<li><p>Dubbo</p>
+<ul>
+<li>仅实现服务治理，可通过 Filter 完善</li>
+<li>RPC 长链接，响应更快</li>
+<li>依赖重，需要完善的版本管理，程序入侵少</li>
+</ul>
+</li>
+<li><p>Spring Cloud</p>
+<ul>
+<li>覆盖微服务架构众多部件</li>
+<li>HTTP RESTful API</li>
+<li>JSON 交互，RESTful 提供跨平台基础</li>
+</ul>
+</li>
+</ul>
+<h3 id="Dubbo-amp-SpringCloud"><a href="#Dubbo-amp-SpringCloud" class="headerlink" title="Dubbo &amp; SpringCloud"></a>Dubbo &amp; SpringCloud</h3><h4 id="RPC"><a href="#RPC" class="headerlink" title="RPC"></a>RPC</h4><ul>
+<li><strong>远程过程调用</strong>：从一个系统（客户主机）中某个程序调用另一个系统（服务器主机）上某个函数的一种方法。</li>
+</ul>
+<h4 id="Dubbo-架构理解"><a href="#Dubbo-架构理解" class="headerlink" title="Dubbo 架构理解"></a>Dubbo 架构理解</h4><p><img src="img/integration/图片 10.png" alt="图片10"></p>
+<ul>
+<li><strong>Provider</strong> ：服务提供者。</li>
+<li><strong>Consumer</strong> ：服务消费者。</li>
+<li><strong>Registry</strong> ：服务注册与发现的中心，提供目录服务。</li>
+<li><strong>Monitor</strong> ：服务监控，统计服务的调用次数、调用时间等信息的日志服务，并可以对服务设置权限、降级处理等，称为服务管控中心。</li>
+</ul>
+<h4 id="Zookeeper-作用"><a href="#Zookeeper-作用" class="headerlink" title="Zookeeper 作用"></a>Zookeeper 作用</h4><ul>
+<li>ZooKeeper 是一个开源的分布式协调服务，目标是将那些复杂且容易出错的分布式一致性服务封装起来，构成一个高效可靠的原语集，并以一系列简单易用的接口提供给用户使用。是一个典型的分布式数据一致性的解决方案；分布式应用程序可以基于它实现诸如数据发布/订阅、负载均衡、命名服务、分布式协调/通知、集群管理、Master 选举、分布式锁和分布式队列等功能。</li>
+</ul>
+<h4 id="Dubbo-应用中关键注解及作用"><a href="#Dubbo-应用中关键注解及作用" class="headerlink" title="Dubbo 应用中关键注解及作用"></a>Dubbo 应用中关键注解及作用</h4><ul>
+<li><p>服务提供者</p>
+<ul>
+<li><p>Service 注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.apache.dubbo.config.annotation.Service;</span><br><span class="line"><span class="meta">@Service</span>(version = <span class="string">"$&#123;hello.service.version&#125;"</span>,application=<span class="string">"$&#123;dubbo.application.id&#125;"</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动类注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@EnableDubbo</span></span><br><span class="line"><span class="meta">@SpringBootApplicaiton</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DubboHelloworldApplication</span> </span>&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>服务消费者</p>
+<ul>
+<li><p>Reference 注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.apache.dubbo.config.annotation.Reference;</span><br><span class="line"><span class="meta">@Reference</span>(version = <span class="string">"$&#123;hello.service.version&#125;"</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动类注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@EnableDubbo</span></span><br><span class="line"><span class="meta">@SpringBootApplicaiton</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DubboHelloworldRestApplication</span> </span>&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Dubbo-微服务的开发部署与测试"><a href="#Dubbo-微服务的开发部署与测试" class="headerlink" title="Dubbo 微服务的开发部署与测试"></a>Dubbo 微服务的开发部署与测试</h4><ul>
+<li><p>下载、创建 zookeeper 镜像和容器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pull zookeeper:3.6.0</span><br><span class="line">docker run –d --name zookeeper –p 2181:2181 --net testnet zookeeper:3.6.0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>下载、创建 dubbo-admin 镜像和容器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull apache&#x2F;dubbo-admin</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加依赖</p>
+<ul>
+<li>接口项目</li>
+<li>dubbo 依赖（apache）</li>
+<li>dubbo-zookeeper 依赖</li>
+</ul>
+</li>
+<li><p>dubbo 服务提供者配置（application.properties）</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dubbo</span></span><br><span class="line"><span class="comment"># Base packages to scan Dubbo Components (e.g @Service , @Reference)</span></span><br><span class="line"><span class="meta">dubbo.scan.basePackages</span> = <span class="string">se.zust.edu.dubbohelloworld.service</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Dubbo Config properties</span></span><br><span class="line"><span class="meta">hello.service.version</span>=<span class="string">1.0.0</span></span><br><span class="line"><span class="comment">## ApplicationConfig Bean</span></span><br><span class="line"><span class="meta">dubbo.application.id</span> = <span class="string">helloworld-provider</span></span><br><span class="line"><span class="meta">dubbo.</span> <span class="string">application.name = helloworld-provider</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## ProtocolConfig Bean</span></span><br><span class="line"><span class="meta">dubbo.protocol.id</span> = <span class="string">dubbo</span></span><br><span class="line"><span class="meta">dubbo.protocol.name</span> = <span class="string">dubbo</span></span><br><span class="line"><span class="meta">dubbo.protocol.port</span> = <span class="string">11245</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## RegistryConfig Bean</span></span><br><span class="line"><span class="meta">dubbo.registry.id</span> = <span class="string">zk-helloworld-provider</span></span><br><span class="line"><span class="comment">#dubbo.registry.address = N/A</span></span><br><span class="line"><span class="comment"># zookeeper</span></span><br><span class="line"><span class="meta">dubbo.registry.protocol</span> = <span class="string">zookeeper</span></span><br><span class="line"><span class="meta">dubbo.registry.address</span> = <span class="string">127.0.0.1:2181</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>dubbo 服务消费者配置（application.properties）</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">hello.service.version</span> = <span class="string">1.0.0</span></span><br><span class="line"><span class="comment"># application.name</span></span><br><span class="line"><span class="meta">dubbo.application.name</span>=<span class="string">hello-service-comsumer</span></span><br><span class="line"><span class="comment"># address</span></span><br><span class="line"><span class="meta">dubbo.registry.address</span> = <span class="string">zookeeper://127.0.0.1:2181</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>多模块改造</p>
+<p><img src="img/integration/图片 8.png" alt="图片8"></p>
+</li>
+</ul>
+<h4 id="Springboot-与-SpringCloud-的关系"><a href="#Springboot-与-SpringCloud-的关系" class="headerlink" title="Springboot 与 SpringCloud 的关系"></a>Springboot 与 SpringCloud 的关系</h4><ul>
+<li>Spring Cloud 是一个微服务框架的规范，注意，只是规范，他不是任何具体的框架。</li>
+<li>没有必然的关系</li>
+<li>最快的微服务开发方法是 springboot</li>
+<li>Spring Cloud 通过 Spring Boot 风格的封装，屏蔽掉了复杂的配置和实现原理，最终给开发者留出了一套简单易懂、容易部署的分布式系统开发工具包。</li>
+</ul>
+<h4 id="SpringCloud-核心组件与功能"><a href="#SpringCloud-核心组件与功能" class="headerlink" title="SpringCloud 核心组件与功能"></a>SpringCloud 核心组件与功能</h4><h5 id="Eureka"><a href="#Eureka" class="headerlink" title="Eureka"></a>Eureka</h5><p>云端服务发现，一个基于 REST 的服务，用于定位服务，以实现云端中间层服务发现和故障转移。</p>
+<h5 id="Ribbon"><a href="#Ribbon" class="headerlink" title="Ribbon"></a>Ribbon</h5><p>提供云端负载均衡，有多种负载均衡策略可供选择，可配合服务发现和断路器使用。</p>
+<ul>
+<li><p>在 RestTemplate 的生成方法上添加@LoadBalanced 注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="meta">@LoadBalanced</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> RestTemplate <span class="title">restTemplate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> RestTemplate();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改服务调用的方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 直接使用微服务名字， 从nacos中获取服务地址</span></span><br><span class="line">String url = <span class="string">"service-product"</span>;</span><br><span class="line"><span class="comment">// 通过restTemplate调用商品微服务</span></span><br><span class="line">Product product = restTemplate.getForObject...</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="Hystrix"><a href="#Hystrix" class="headerlink" title="Hystrix"></a>Hystrix</h5><p>熔断器，容错管理工具，旨在通过熔断机制控制服务和第三方库的节点,从而对延迟和故障提供更强大的容错能力。</p>
+<h5 id="Feign"><a href="#Feign" class="headerlink" title="Feign"></a>Feign</h5><p>REST 客户端，目的是为了简化 WebService 客户端的开发</p>
+<ul>
+<li>默认集成了 Ribbon、Hystrix</li>
+<li><p>加入 Fegin 的依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--fegin组件--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-openfeign<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>主类加上注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableDiscoveryClient</span></span><br><span class="line"><span class="comment">//开启Fegin</span></span><br><span class="line"><span class="meta">@EnableFeignClients</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OrderApplication</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建一个 service， 并使用 Fegin 实现微服务调用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FeignClient</span>(<span class="string">"service-product"</span>)</span><br><span class="line"><span class="comment">//声明调用的提供者的name</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ProductService</span> </span>&#123;</span><br><span class="line"><span class="comment">//指定调用提供者的哪个方法</span></span><br><span class="line"><span class="comment">//@FeignClient+@GetMapping 就是一个完整的请求路径 http://service- product/product/&#123;pid&#125;</span></span><br><span class="line">    <span class="meta">@GetMapping</span>(value = <span class="string">"/product/&#123;pid&#125;"</span>)</span><br><span class="line">    <span class="function">Product <span class="title">findByPid</span><span class="params">(@PathVariable(<span class="string">"pid"</span>)</span> Integer pid)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改 controller 代码，并重启微服务验证</p>
+</li>
+</ul>
+<h5 id="Zuul"><a href="#Zuul" class="headerlink" title="Zuul"></a>Zuul</h5><p>为微服务集群提供代理、过滤、路由等功能</p>
+<h5 id="Config"><a href="#Config" class="headerlink" title="Config"></a>Config</h5><p>分布式配置中心组件，让你可以把配置放到远程服务器，集中化管理集群配置，目前支持本地存储（内存）、也支持放在远程 Git、 svn。</p>
+<h5 id="gateway"><a href="#gateway" class="headerlink" title="gateway"></a>gateway</h5><p>系统的统一入口，它封装了应用程序的内部结构，为客户端提供统一服</p>
+<p>务，一些与业务本身功能无关的公共逻辑可以在这里实现，诸如认证、鉴权、监控、路由转发等等。</p>
+<ul>
+<li><p>添加依赖</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;artifactId&gt;spring-cloud-starter-gateway&lt;/artifactId&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建主类，添加配置文件</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server</span>:<span class="string"></span></span><br><span class="line">  <span class="attr">port</span>: <span class="string">7000</span></span><br><span class="line"><span class="attr">spring</span>:<span class="string"></span></span><br><span class="line">  <span class="attr">application</span>:<span class="string"></span></span><br><span class="line">    <span class="attr">name</span>: <span class="string">api-gateway</span></span><br><span class="line">  <span class="attr">cloud</span>:<span class="string"></span></span><br><span class="line"><span class="attr">gateway</span>:<span class="string"></span></span><br><span class="line">  <span class="attr">routes</span>: <span class="string"># 路由数组[路由 就是指定当请求满足什么条件的时候转到哪个微服务]</span></span><br><span class="line">    <span class="meta">-</span> <span class="string">id: product_route # 当前路由的标识, 要求唯一</span></span><br><span class="line">      <span class="attr">uri</span>: <span class="string">http://localhost:8081 # 请求要转发到的地址</span></span><br><span class="line">      <span class="attr">order</span>: <span class="string">1 # 路由的优先级,数字越小级别越高</span></span><br><span class="line">      <span class="attr">predicates</span>: <span class="string"># 断言(就是路由转发要满足的条件)</span></span><br><span class="line">        <span class="meta">-</span> <span class="string">Path=/product-serv/** # 当请求路径满足Path指定的规则时,才进行路由转发</span></span><br><span class="line">      <span class="attr">filters</span>: <span class="string"># 过滤器,请求在传递过程中可以通过过滤器对其进行一定的修改</span></span><br><span class="line">        <span class="meta">-</span> <span class="string">StripPrefix=1 # 转发之前去掉1层路径</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动项目通过网关访问服务</p>
+</li>
+</ul>
+<h4 id="SpringCloud-应用中关键注解与作用"><a href="#SpringCloud-应用中关键注解与作用" class="headerlink" title="SpringCloud 应用中关键注解与作用"></a>SpringCloud 应用中关键注解与作用</h4><h5 id="nacos（eureka-config）"><a href="#nacos（eureka-config）" class="headerlink" title="nacos（eureka + config）:"></a>nacos（eureka + config）:</h5><ol>
+<li>添加依赖<code>&lt;artifactId&gt;spring-cloud-starter-alibaba-nacos-discovery&lt;/artifactId&gt;</code></li>
+<li>主类上添加<code>@EnableDiscoveryClient</code>注解</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableDiscoveryClient</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OrderApplication</span> </span>&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>在 application.yml 中添加 nacos 服务的地址</li>
+</ol>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring</span>:<span class="string"></span></span><br><span class="line">  <span class="attr">cloud</span>:<span class="string"></span></span><br><span class="line">    <span class="attr">nacos</span>:<span class="string"></span></span><br><span class="line">      <span class="attr">discovery</span>:<span class="string"></span></span><br><span class="line">        <span class="meta">server-addr</span>: <span class="string">127.0.0.1:8848</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>修改微服务，实现服务调用，启动 nacos</li>
+</ol>
+<h4 id="SpringCloud-开发步骤"><a href="#SpringCloud-开发步骤" class="headerlink" title="SpringCloud 开发步骤"></a>SpringCloud 开发步骤</h4><ul>
+<li><p>多模块项目结构准备</p>
+<ul>
+<li><p>新建 POM 类型的父项目</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;packaging&gt;pom&lt;&#x2F;packaging&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在父项目中添加如下模块项目</p>
+<ul>
+<li>服务注册中心 Eureka 服务器项目——添加 EurekaServer 依赖</li>
+<li>服务提供者项目（Eureka 客户端）——添加 Eureka Discovery 和 web 依赖</li>
+<li>服务消费者项目（Eureka 客户端）——添加 Eureka Discovery 和 web 依赖</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Eureka 服务器开发</p>
+<ul>
+<li><p>启动类前注解@EnableEurekaServer</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableEurekaServer</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CloudDemoServerApplication</span> </span>&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新建配置文件 application.yml</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">eureka</span>:<span class="string"></span></span><br><span class="line">  <span class="attr">client</span>:<span class="string"></span></span><br><span class="line">    <span class="meta">service-url</span>:<span class="string"></span></span><br><span class="line">      <span class="attr">defaultZone</span>: <span class="string">http://localhost:8761/eureka</span></span><br><span class="line"><span class="attr">spring</span>:<span class="string"></span></span><br><span class="line">  <span class="attr">application</span>:<span class="string"></span></span><br><span class="line">    <span class="attr">name</span>: <span class="string">eureka</span></span><br><span class="line"><span class="attr">server</span>:<span class="string"></span></span><br><span class="line">  <span class="attr">port</span>: <span class="string">8761</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>运行 Eureka 服务器，测试访问</p>
+</li>
+</ul>
+</li>
+<li><p>微服务（服务端）开发</p>
+<ul>
+<li><p>在父项目中添加模块项目</p>
+</li>
+<li><p>添加 Eureka Discovery Client、Springweb、Lombok 依赖</p>
+</li>
+<li><p>启动类前注解@EnableDiscoveryClient（@EnableEurekaClient）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableDiscoveryClient</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CloudDemoClient1Application</span> </span>&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新建配置文件 application.yml</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">eureka</span>:<span class="string"></span></span><br><span class="line">  <span class="attr">client</span>:<span class="string"></span></span><br><span class="line">    <span class="meta">service-url</span>:<span class="string"></span></span><br><span class="line">      <span class="attr">defaultZone</span>: <span class="string">http://localhost:8761/eureka</span></span><br><span class="line"><span class="attr">spring</span>:<span class="string"></span></span><br><span class="line">  <span class="attr">application</span>:<span class="string"></span></span><br><span class="line">    <span class="attr">name</span>: <span class="string">springcloud-service1 # 服务提供方名称</span></span><br><span class="line"><span class="attr">server</span>:<span class="string"></span></span><br><span class="line">  <span class="attr">port</span>: <span class="string">2222 #服务端口</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>业务功能开发：与 springboot 开发一致</p>
+</li>
+</ul>
+</li>
+<li><p>微服务（客户端）消费者开发</p>
+<ul>
+<li><p>在父项目中添加模块项目</p>
+</li>
+<li><p>添加 Eureka Discovery Client、OpenFeign、Springweb、Lombok 依赖</p>
+</li>
+<li><p>启动类前注解@EnableDiscoveryClient（@EnableEurekaClient）</p>
+<ul>
+<li>客户端访问配置 RestTemplate 调用 / Feign 客户端（二选一即可，也可以同时存在）</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableDiscoveryClient</span></span><br><span class="line"><span class="comment">// 两种方式访问微服务</span></span><br><span class="line"><span class="comment">// 1、通过Feign客户端访问</span></span><br><span class="line"><span class="meta">@EnableFeignClients</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SpringcloudDemoClient3Application</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 2、通过RestTemplate访问</span></span><br><span class="line">  <span class="meta">@Bean</span></span><br><span class="line">  <span class="meta">@LoadBalanced</span></span><br><span class="line">  <span class="function">RestTemplate <span class="title">restTemplate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> RestTemplate();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置文件</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">eureka</span>:<span class="string"></span></span><br><span class="line">  <span class="attr">client</span>:<span class="string"></span></span><br><span class="line">    <span class="meta">service-url</span>:<span class="string"></span></span><br><span class="line">      <span class="attr">defaultZone</span>: <span class="string">http://localhost:8761/eureka</span></span><br><span class="line"><span class="attr">spring</span>:<span class="string"></span></span><br><span class="line">  <span class="attr">application</span>:<span class="string"></span></span><br><span class="line">    <span class="attr">name</span>: <span class="string">springcloud-client1</span></span><br><span class="line"><span class="attr">server</span>:<span class="string"></span></span><br><span class="line">  <span class="attr">port</span>: <span class="string">5555 #消费者端口</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>业务功能开发 1：FeignClient 方式调用微服务</p>
+<ul>
+<li><p>新建 dto 包，添加 dto 类</p>
+</li>
+<li><p>新建 service 包，添加功能接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FeignClient</span>(<span class="string">"springcloud-service1"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">FeignUserService</span> </span>&#123;</span><br><span class="line">  <span class="meta">@RequestMapping</span>(value = <span class="string">"/user/&#123;id&#125;"</span>, method = RequestMethod.GET)</span><br><span class="line">  <span class="function"><span class="keyword">public</span> UserDto <span class="title">getUser</span><span class="params">(@PathVariable <span class="keyword">int</span> id)</span></span>;</span><br><span class="line">  <span class="meta">@RequestMapping</span>(value = <span class="string">"/user"</span>, method = RequestMethod.POST)</span><br><span class="line">  <span class="function"><span class="keyword">public</span> UserDto <span class="title">addUSer</span><span class="params">(@RequestParam <span class="keyword">int</span> id, @RequestParam <span class="keyword">int</span> name)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新建 controller 包，添加 controller 类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/user"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserAccessController</span> </span>&#123;</span><br><span class="line">  <span class="meta">@Autowired</span></span><br><span class="line">  FeignUserService userService;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> UserDto <span class="title">getUser</span><span class="params">(<span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> userService.getUser(id);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>业务功能开发 2：RestTemplate 方式调用微服务</p>
+<ul>
+<li><p>在 controller 中通过@Autowired 注入 RestTemplate（启动类中通过@Bean 加入容器了）</p>
+</li>
+<li><p>通过 restTemplate.getForObject 方法调用服务端接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/user"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserAccessController</span> </span>&#123;</span><br><span class="line">  <span class="meta">@Autowired</span></span><br><span class="line">  FeignUserService userService;</span><br><span class="line">  <span class="meta">@Autowired</span></span><br><span class="line">  RestTemplate restTemplate;</span><br><span class="line">  <span class="meta">@RequestMapping</span>(<span class="string">"/&#123;id&#125;"</span>)</span><br><span class="line">  <span class="function"><span class="keyword">public</span> UserDto <span class="title">getUser</span><span class="params">(@PathVariable <span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> userService.getUser(id);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="meta">@RequestMapping</span>(<span class="string">"/template/&#123;id&#125;"</span>)</span><br><span class="line">  <span class="function"><span class="keyword">public</span> UserDto <span class="title">getUserTemplate</span><span class="params">(@PathVariable <span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 通过服务名字访问api</span></span><br><span class="line">    <span class="keyword">return</span> restTemplate.getForObject(<span class="string">"http://springcloud-service1/user/"</span> + id, UserDto<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class">  &#125;</span></span><br><span class="line"><span class="class">&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>运行启动类，测试新接口</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="容器与-Docker"><a href="#容器与-Docker" class="headerlink" title="容器与 Docker"></a>容器与 Docker</h3><h4 id="计算虚拟化发展过程（虚拟机对比）"><a href="#计算虚拟化发展过程（虚拟机对比）" class="headerlink" title="计算虚拟化发展过程（虚拟机对比）"></a>计算虚拟化发展过程（虚拟机对比）</h4><ul>
+<li>远古时代<ul>
+<li>物理机的操作系统只有一个</li>
+</ul>
+</li>
+<li>虚拟机时代<ul>
+<li>同一硬件设施运行配置不一样的平台（软件、系统）</li>
+</ul>
+</li>
+<li><p>容器时代</p>
+<ul>
+<li>共用操作系统资源，消耗更少资源</li>
+</ul>
+</li>
+<li><p>相同点：</p>
+<ol>
+<li>虚拟机和容器都是宿主机上面的一个进程，也就是一个应用程序。</li>
+<li>容器和虚拟机都有着资源隔离、安全隔离和系统资源分配的功能。</li>
+</ol>
+</li>
+<li><p>不同点：</p>
+</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>虚拟机</th>
+<th>容器</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>隔离</td>
+<td>提供与主机操作系统和其他 VM 的完全隔离，提供强安全边界</td>
+<td>提供与主机和其他容器的轻度隔离，不提供与 VM 一样强的安全边界</td>
+</tr>
+<tr>
+<td>大小</td>
+<td>大（GB）</td>
+<td>小（MB）</td>
+</tr>
+<tr>
+<td>启动速度</td>
+<td>慢（分钟）</td>
+<td>快（秒：省去启动整个虚拟客户机的开销）</td>
+</tr>
+<tr>
+<td>操作系统</td>
+<td>运行包含内核的完整操作系统，需要更多的系统资源（CPU、内存和存储）</td>
+<td>运行操作系统的用户模式部分，可以对其进行定制，使之只包含应用所需的服务，减少所使用的系统资源</td>
+</tr>
+<tr>
+<td>系统支持量</td>
+<td>运行几十个虚拟机</td>
+<td>可以支持上千个容器</td>
+</tr>
+<tr>
+<td>虚拟化</td>
+<td>硬件平台级的虚拟化技术</td>
+<td>软件运行环境的虚拟化技术</td>
+</tr>
+<tr>
+<td>交付/部署</td>
+<td>受操作系统、环境变量限制</td>
+<td>开发、测试、生产环境一致</td>
+</tr>
+<tr>
+<td>迁移/扩展</td>
+<td>受操作系统、硬件资源限制</td>
+<td>容易</td>
+</tr>
+<tr>
+<td>系统性能</td>
+<td>性能损耗较大</td>
+<td>性能损耗低</td>
+</tr>
+<tr>
+<td>硬件资源利用率</td>
+<td>较低</td>
+<td>较高</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><p>虚拟机时代：虚拟机的出现使得用户在一台物理机上能够独立运行多个相互隔离的系统，通过对资源的抽象化使得主机资源能够被有效复用。然而，虚拟机同样也会带来一些问题：大量独立系统的运行会占用许多额外开销，消耗宿主机器资源，资源竞争时可能会严重影响系统响应；此外，每运行新的虚拟机都需要重新配置一遍环境，和在物理机上的情况基本无异，重复的环境配置操作则会消耗开发和运维人员的工作时间。此时需求便关注到如何减少虚拟化时的资源损耗，同时还能保证隔离性，以及使应用的上线周期更短，这便引导了容器技术的发展。</p>
+</li>
+<li><p>容器时代：容器以其依托于系统实现轻量内核级别虚拟化为特色，各容器之间完全使用沙箱机制，相互之间不会有任何接口，已成为微服务时代的重要基础性软件工具。</p>
+</li>
+<li><p>Linux 实现</p>
+<ul>
+<li>资源隔离：Linux 通过 Namespace 实现, 就能在 OS 层面上同时运行多个相互独立的子系统</li>
+<li>操作系统和基础镜像</li>
+<li>分层文件系统</li>
+</ul>
+</li>
+</ul>
+<h4 id="容器技术的基本概念"><a href="#容器技术的基本概念" class="headerlink" title="容器技术的基本概念"></a>容器技术的基本概念</h4><p>公用操作系统资源，消耗更少的资源，完成同样的工作对应用程序及其关联性进行隔离构建起一套能随处运行的自容纳单元。</p>
+<ul>
+<li>Dockerfile：是一个用来构建镜像的文本文件，文本内容包含了一条条构建镜像所需的指令和说明。每一条指令生成一层镜像文件。通过 docker build 执行 dockerfile 中的指令生成镜像</li>
+<li>Docker 数据卷：容器与宿主机的文件系统完全隔离，容器删除后应用和数据都会清除，而应用可以重新部署，数据无法自动重建。通过数据卷，做到删除/重建应用容器的时候，保持数据</li>
+<li>Docker 网络： Docker 引擎在宿主机虚拟一个 Docker 容器网桥(docker0)，作为容器网络的网关，外部网络无法寻址到（包括宿主机）</li>
+</ul>
+<h4 id="Docker-镜像与容器"><a href="#Docker-镜像与容器" class="headerlink" title="Docker 镜像与容器"></a>Docker 镜像与容器</h4><ul>
+<li>镜像：Docker 镜像是一个特殊的文件系统（UnionFS，一层一层的系统文件），提供容器运行时所需的程序、库、资源、配置等文件，另外还包含了一些为运行时准备的一些配置参数（如匿名卷、环境变量、用户等）。镜像是一个静态的概念，不包含任何动态数据，其内容在构建之后也不会被改变。</li>
+<li>容器：通过 Docker 引擎运行 Docker 镜像创建该镜像的容器。容器是镜像的实例，对应系统中的一个实际运行的进程。相对于镜像来说容器是动态的，容器在启动的时候创建了一层可写层次作为最上层</li>
+</ul>
+<h4 id="Docker-常用命令（mysql、日志、端口映射）"><a href="#Docker-常用命令（mysql、日志、端口映射）" class="headerlink" title="Docker 常用命令（mysql、日志、端口映射）"></a>Docker 常用命令（mysql、日志、端口映射）</h4><p><img src="img/integration/图片 7.png" alt="图片7"></p>
+<h5 id="容器使用"><a href="#容器使用" class="headerlink" title="容器使用"></a>容器使用</h5><ul>
+<li>docker pull ubuntu：获取镜像。</li>
+<li>docker run -itd —name ubuntu-test ubuntu /bin/bash：启动容器（-i: 交互式操作、-t: 终端、-d：后台运行、退出终端 exit、-P:将容器内部使用的网络端口随机映射到我们使用的主机上）。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD&#x3D;123456 -d mysql:5.7</span><br><span class="line">docker run  --name nginx-test -p 8080:80 -d nginx</span><br><span class="line">docker run --name tomcat -p 8081:8080 -d tomcat</span><br></pre></td></tr></table></figure>
+<ul>
+<li>docker stop：停止容器运行</li>
+<li>docker ps -a：查看所有容器。</li>
+<li>docker start id：启动对应 id 容器。</li>
+<li>docker restart id：重启对应 id 容器。</li>
+<li>docker attach/docker exec：进入容器，在容器中执行命令。推荐使用 docker exec 命令，因为此命令会退出容器终端，但不会导致容器的停止。</li>
+<li>docker rm -f id：删除对应 id 容器。</li>
+<li>docker top：来查看容器内部运行的进程。</li>
+<li>docker logs [ID 或者名字] ：查看容器内部的标准输出（应用日志）。</li>
+<li>docker port：查看指定 （ID 或者名字）容器的某个确定端口映射到宿主机的端口号。</li>
+</ul>
+<h5 id="镜像使用"><a href="#镜像使用" class="headerlink" title="镜像使用"></a>镜像使用</h5><ul>
+<li><p>docker images：列出本地主机上的镜像（REPOSITORY：表示镜像的仓库源、TAG：镜像的标签、IMAGE ID：镜像 ID</p>
+<p>、CREATED：镜像创建时间、SIZE：镜像大小）</p>
+</li>
+<li><p>docker pull：下载获取镜像</p>
+</li>
+<li><p>docker search：搜索镜像</p>
+</li>
+<li><p>docker rmi：删除镜像</p>
+</li>
+<li><p>apt-get update：更新镜像</p>
+</li>
+<li><p>docker build（Dockerfile）：构建镜像</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t runoob&#x2F;centos:6.7 .</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>-t</strong> ：指定要创建的目标镜像名</li>
+<li><strong>.</strong> ：Dockerfile 文件所在目录，可以指定 Dockerfile 的绝对路径</li>
+</ul>
+</li>
+<li><p>docker tag id runoob/centos:dev：为镜像添加一个新的标签</p>
+</li>
+</ul>
+<h5 id="容器连接"><a href="#容器连接" class="headerlink" title="容器连接"></a>容器连接</h5><ul>
+<li><p>网络端口映射</p>
+<ul>
+<li><p>-P :是容器内部端口随机映射到主机的端口</p>
+</li>
+<li><p>-p : 是容器内部端口绑定到指定的主机端口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 127.0.0.1:5000:5000&#x2F;udp</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>新建网络</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network create -d bridge test-net</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>连接容器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker run -itd --name test1 --network test-net ubuntu &#x2F;bin&#x2F;bash</span><br><span class="line">docker run -itd --name test2 --network test-net ubuntu &#x2F;bin&#x2F;bash</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>指定容器配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it --rm -h host_ubuntu  --dns&#x3D;114.114.114.114 --dns-search&#x3D;test.com ubuntu</span><br></pre></td></tr></table></figure>
+<p>—rm：容器退出时自动清理容器内部的文件系统。</p>
+<p>-h HOSTNAME 或者 —hostname=HOSTNAME： 设定容器的主机名。</p>
+<p>—dns=IP_ADDRESS：添加 DNS 服务器到容器的 /etc/resolv.conf 中。</p>
+<p>—dns-search=DOMAIN：设定容器的搜索域。</p>
+</li>
+</ul>
+<h4 id="Docker-打包-Springboot-项目（jdk）"><a href="#Docker-打包-Springboot-项目（jdk）" class="headerlink" title="Docker 打包 Springboot 项目（jdk）"></a>Docker 打包 Springboot 项目（jdk）</h4><ul>
+<li><p>创建 Springboot 项目并完成功能</p>
+</li>
+<li><p>Maven 构建打 jar 包</p>
+</li>
+<li><p>编写 Dockerfile（FROM，指定使用哪个镜像源；RUN 指令告诉 docker 在镜像内执行命令，安装了什么）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ARG BUILD_FROM&#x3D;arm64v8</span><br><span class="line">FROM ubuntu:16.04</span><br><span class="line">MAINTAINER whiskeyi</span><br><span class="line">VOLUME [&quot;&#x2F;opt&#x2F;jdk&quot;]</span><br><span class="line">ADD .&#x2F;jdk8.tar.gz &#x2F;opt&#x2F;jdk</span><br><span class="line">ENV JAVA_HOME &#x2F;opt&#x2F;jdk&#x2F;jdk1.8.0_144</span><br><span class="line">ENV CLASSPATH $JAVA_HOME&#x2F;lib&#x2F;dt.jar:$JAVA_HOME&#x2F;lib&#x2F;tools.jar</span><br><span class="line">ENV PATH $JAVA_HOME&#x2F;bin:$PATH</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>制作镜像，上传镜像仓库</p>
+<ul>
+<li><p>打包镜像</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build –t springboottest:1.0 .</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Tag 重命名（生成一个新的 image 引用）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker tag springboottest:1.0 registry.cn-hangzhou.aliyuncs.com&#x2F;edu_zust&#x2F;springboottest:1.0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>上传阿里云私有仓库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">登录：docker login --username&#x3D;****** registry.cn-hangzhou.aliyuncs.com</span><br><span class="line">docker push registry.cn-hangzhou.aliyuncs.com&#x2F;edu_zust&#x2F;springboottest:1.0</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>容器部署</p>
+<ul>
+<li><p>依赖准备（mysql 容器及数据库建立）</p>
+</li>
+<li><p>在部署主机上拉取镜像</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pull registry.cn-hangzhou.aliyuncs.com&#x2F;edu_zust&#x2F;springboottest:1.0</span><br><span class="line">docker tag registry.cn-hangzhou.aliyuncs.com&#x2F;edu_zust&#x2F;springboottest:1.0 springboottest:v1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>运行镜像</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run –d –name test-app –p 8080:8080 –network mynet springboottest:v1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打开浏览器，通过部署主机 ip 的 8080 访问容器中的 web，进行功能测试</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="OpenAPI"><a href="#OpenAPI" class="headerlink" title="OpenAPI"></a>OpenAPI</h3><h4 id="RESTful-基本概念"><a href="#RESTful-基本概念" class="headerlink" title="RESTful 基本概念"></a>RESTful 基本概念</h4><ul>
+<li><p>REST 即在符合架构原理的前提下，理解和评估以网络为基础的应用软件的架构设计，得到一个功能强、性能好、适宜通信的<strong>架构风格</strong>。</p>
+</li>
+<li><p>REST(Representation + State + Transfer)表现层状态转化。即资源在网络中以某种表现形式进行状态转移</p>
+</li>
+<li><p>如果一个架构符合 REST 原则就是 RESTful 架构，是一种面向资源的架构。</p>
+<ul>
+<li>每个 URI 代表一种资源</li>
+<li>客户端和服务器之间，传递这种资源的某种表现层</li>
+<li>客户端通过 HTTP 动词，对服务器端资源进行操作，实现“表现层状态转化”</li>
+</ul>
+</li>
+<li><p>URL 用于资源定位，HTTP 动词描述操作</p>
+</li>
+</ul>
+<h4 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h4><ul>
+<li>资源表示一种实体，URI 使用名词表示，不应该包含动词；一般来说，数据库中的表都是同种记录的集合，所以 URI 中的名词应该使用复数。</li>
+<li>如果某些动作是 HTTP 动词表示不了的，应该把动作做成一种资源。</li>
+<li>参数的设计允许存在冗余，即允许 API 路径和 URL 参数偶尔有重复。</li>
+<li>常见参数：?limit/?offset/?page=/?sortby=</li>
+</ul>
+<h4 id="HTTP-动词"><a href="#HTTP-动词" class="headerlink" title="HTTP 动词"></a>HTTP 动词</h4><ul>
+<li><p>GET(SELECT)：从服务器取出资源(一项或多项)</p>
+</li>
+<li><p>POST(CREATE)：在服务器新建一个资源</p>
+</li>
+<li><p>PUT(UPDATE)：在服务器更新资源(客户端提供改变后的完整资源)</p>
+</li>
+<li><p>PATCH(UPDATE)：在服务器更新资源(客户端提供改变的属性)</p>
+</li>
+<li><p>DELETE(DELETE)：从服务器删除资源</p>
+</li>
+<li><p>HEAD：用于获取某个资源的元数据</p>
+</li>
+<li><p>OPTIONS：用于获取某个资源所支持的 Request 类型</p>
+</li>
+</ul>
+<h4 id="Restful-最佳实践"><a href="#Restful-最佳实践" class="headerlink" title="Restful 最佳实践"></a>Restful 最佳实践</h4><ol>
+<li>动词/方法：GET、POST、PUT、PATCH、DELETE；URI(面向资源)：/articles/；端点：动词与 URI 结合<code>GET:/articles/</code>。</li>
+<li>一般不要返回纯文本：body 头部加上 Content-type: application/json。</li>
+<li>避免 URI 使用动词：createNewArticle no | articles yes</li>
+<li>合适情况下使用复数的名词来描述资源: /articles/</li>
+<li>响应中返回错误详情: error =&gt; detail</li>
+<li>返回正确的 status code(与错误类型一致，有一定含义): 200 no</li>
+<li>保持 status code 一致</li>
+<li>不要嵌套资源：/authors/12/articles/ no | /articles/?author_id=12 yes</li>
+<li>优雅处理尾斜杠：提供重定向相应</li>
+<li>querystring 完成筛选和分页：GET: /articles/?published=true&amp;page=2&amp;page_size=20</li>
+<li>401/403: 未认证(未提供身份验证凭据、认证无效<code>401 Unauthorized</code>) | 未授权(经过身份验证，没有访问资源的权限<code>403 Forbidden</code>)</li>
+<li>巧用 202 Accepted</li>
+<li>采用 REST API 定制化框架</li>
+</ol>
+<h4 id="OAUTH"><a href="#OAUTH" class="headerlink" title="OAUTH"></a>OAUTH</h4><p>OAuth 为客户端提供了一种代表资源拥有者访问受保护资源的方法。 在客户端访问保护资源之前，他必须先从资源拥有者获取授权，然后用访问许可交换访问令牌。客户端通过向资源服务器出示访问令牌来访问受保护资源</p>
+<h3 id="WebService"><a href="#WebService" class="headerlink" title="WebService"></a>WebService</h3><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><ul>
+<li>一个接受 XML 格式请求的应用程序</li>
+<li>可以从其他系统跨网络，是分布式技术的发展</li>
+<li>轻量级和与厂商无关的通信协议（安全、事务等由 Web 服务规范拓展处理、基于标准开放协议，跨越所有厂商）</li>
+</ul>
+<h4 id="相关术语"><a href="#相关术语" class="headerlink" title="相关术语"></a>相关术语</h4><ul>
+<li>XML – <strong>Extensible Markup Language</strong> －扩展性标记语言 XML，用于传输格式化的数据，是 Web 服务的基础。 namespace-命名空间。 xmlns=“<a href="http://itcast.cn”" target="_blank" rel="noopener">http://itcast.cn”</a> 使用默认命名空间。 xmlns:itcast=“<a href="http://itcast.cn”使用指定名称的命名空间。" target="_blank" rel="noopener">http://itcast.cn”使用指定名称的命名空间。</a></li>
+<li>WSDL(说明书) – <strong>WebService Description Language</strong> – Web 服务描述语言。 通过 XML 形式说明服务在什么地方－地址。 通过 XML 形式说明服务提供什么样的方法 – 如何调用。描述 WebService 及其函数、参数和返回值。</li>
+<li>SOAP – <strong>Simple Object Access Protocol</strong> – 简单对象访问协议，SOAP 作为一个基于 XML 语言的协议用于有网上传输数据，这样 WebService 可以通过 http 协议的 post 和 get 方法与其他远程数据</li>
+</ul>
+<h4 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h4><ul>
+<li><p>找到对应需要的 webservice 服务</p>
+</li>
+<li><p>下载需要使用的 webservice 的 wsdl：F12 开发者模式，查看响应内容 copy 到 air.wsdl 文件中（删除<code>&lt;s:element ref=&quot;s:schema&quot; /&gt;</code>）</p>
+</li>
+<li><p>新建基本 springboot 项目，添加以下依赖<code>cxf-spring-boot-starter-jaxws（webservice客户端）</code>、<code>fastjson（java对象、json转换）</code>、<code>dom4j（xml数据解析）</code>、<code>commons-lang（apache工具包，字符串处理）</code></p>
+</li>
+<li><p>将处理好的 wsdl 文件放入 resources 目录</p>
+</li>
+<li><p>通过 jax 客户端调用 web 服务，分析返回的结果</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建web服务客户端</span></span><br><span class="line">JaxWsDynamicClientFactory dcf = JaxWsDynamicClientFactory.newInstance();</span><br><span class="line">Clinet client = dcf.createClient(<span class="string">"air.wsdl"</span>);</span><br><span class="line">Object[] objects;</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="comment">// 调用web服务</span></span><br><span class="line">  objects = client.invoke(<span class="string">"getDomesticAirlinesTime"</span>, ...);</span><br><span class="line">  <span class="comment">// 处理服务返回的结果（提取结果xml字符串）</span></span><br><span class="line">  String xmlStr = JSON.toJSONString(objects);</span><br><span class="line">  System.out.printIn(xmlStr);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>提取结果 xml，通过 dom4j 解析</p>
+</li>
+<li><p>将 web 服务的数据封装成自己的 api 接口</p>
+<ul>
+<li>添加 controller 包，新建 AirController 类</li>
+<li>增加<code>List&lt;AirDto&gt; airSearch(String from,String to,String date)</code>，将查询封装成 web 接口，并通过 AirDto 反馈给前端</li>
+</ul>
+</li>
+</ul>
+
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/algorithm.html" data-toggle="tooltip" data-placement="top" title="重拾算法(Re-learning Algorithm)">Next Post</a>
+                    </li>
+                    
+                </ul>
+
+                <!-- tip start -->
+                
+
+                
+                <!-- tip end -->
+
+                <!-- Music start-->
+                
+                <!-- Music end -->
+
+                <!-- Sharing -->
+                
+                <!-- Sharing -->
+
+                <!-- gitment start -->
+                
+                <!-- gitment end -->
+
+                <!-- 来必力City版安装代码 -->
+                
+                <!-- City版安装代码已完成 -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+            </div>
+
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      
+        <aside id="sidebar">
+          <div id="toc" class="toc-article">
+          <strong class="toc-title">文章目录：</strong>
+          
+            
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#系统集成优化"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">系统集成优化</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#系统集成基础"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">系统集成基础</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#系统集成基本含义"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">系统集成基本含义</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#系统集成主要方案"><span class="toc-nav-number">1.1.2.</span> <span class="toc-nav-text">系统集成主要方案</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Spring-Boot"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">Spring Boot</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#项目开发基本步骤"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">项目开发基本步骤</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#项目特点与基本架构"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">项目特点与基本架构</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#项目特点"><span class="toc-nav-number">1.2.2.1.</span> <span class="toc-nav-text">项目特点</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#基本架构"><span class="toc-nav-number">1.2.2.2.</span> <span class="toc-nav-text">基本架构</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#与-Spring-关系"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">与 Spring 关系</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Swagger-的作用及配置要"><span class="toc-nav-number">1.2.4.</span> <span class="toc-nav-text">Swagger 的作用及配置要</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#多模块-Maven-项目架构（父子模块操作）"><span class="toc-nav-number">1.2.5.</span> <span class="toc-nav-text">多模块 Maven 项目架构（父子模块操作）</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#微服务"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">微服务</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#微服务架构"><span class="toc-nav-number">1.3.1.</span> <span class="toc-nav-text">微服务架构</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#单体应用和微服务应用比较"><span class="toc-nav-number">1.3.2.</span> <span class="toc-nav-text">单体应用和微服务应用比较</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#微服务技术框架"><span class="toc-nav-number">1.3.3.</span> <span class="toc-nav-text">微服务技术框架</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Dubbo-amp-SpringCloud"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">Dubbo &amp; SpringCloud</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#RPC"><span class="toc-nav-number">1.4.1.</span> <span class="toc-nav-text">RPC</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Dubbo-架构理解"><span class="toc-nav-number">1.4.2.</span> <span class="toc-nav-text">Dubbo 架构理解</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Zookeeper-作用"><span class="toc-nav-number">1.4.3.</span> <span class="toc-nav-text">Zookeeper 作用</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Dubbo-应用中关键注解及作用"><span class="toc-nav-number">1.4.4.</span> <span class="toc-nav-text">Dubbo 应用中关键注解及作用</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Dubbo-微服务的开发部署与测试"><span class="toc-nav-number">1.4.5.</span> <span class="toc-nav-text">Dubbo 微服务的开发部署与测试</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Springboot-与-SpringCloud-的关系"><span class="toc-nav-number">1.4.6.</span> <span class="toc-nav-text">Springboot 与 SpringCloud 的关系</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#SpringCloud-核心组件与功能"><span class="toc-nav-number">1.4.7.</span> <span class="toc-nav-text">SpringCloud 核心组件与功能</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Eureka"><span class="toc-nav-number">1.4.7.1.</span> <span class="toc-nav-text">Eureka</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Ribbon"><span class="toc-nav-number">1.4.7.2.</span> <span class="toc-nav-text">Ribbon</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Hystrix"><span class="toc-nav-number">1.4.7.3.</span> <span class="toc-nav-text">Hystrix</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Feign"><span class="toc-nav-number">1.4.7.4.</span> <span class="toc-nav-text">Feign</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Zuul"><span class="toc-nav-number">1.4.7.5.</span> <span class="toc-nav-text">Zuul</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Config"><span class="toc-nav-number">1.4.7.6.</span> <span class="toc-nav-text">Config</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#gateway"><span class="toc-nav-number">1.4.7.7.</span> <span class="toc-nav-text">gateway</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#SpringCloud-应用中关键注解与作用"><span class="toc-nav-number">1.4.8.</span> <span class="toc-nav-text">SpringCloud 应用中关键注解与作用</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#nacos（eureka-config）"><span class="toc-nav-number">1.4.8.1.</span> <span class="toc-nav-text">nacos（eureka + config）:</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#SpringCloud-开发步骤"><span class="toc-nav-number">1.4.9.</span> <span class="toc-nav-text">SpringCloud 开发步骤</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#容器与-Docker"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">容器与 Docker</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#计算虚拟化发展过程（虚拟机对比）"><span class="toc-nav-number">1.5.1.</span> <span class="toc-nav-text">计算虚拟化发展过程（虚拟机对比）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#容器技术的基本概念"><span class="toc-nav-number">1.5.2.</span> <span class="toc-nav-text">容器技术的基本概念</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Docker-镜像与容器"><span class="toc-nav-number">1.5.3.</span> <span class="toc-nav-text">Docker 镜像与容器</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Docker-常用命令（mysql、日志、端口映射）"><span class="toc-nav-number">1.5.4.</span> <span class="toc-nav-text">Docker 常用命令（mysql、日志、端口映射）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#容器使用"><span class="toc-nav-number">1.5.4.1.</span> <span class="toc-nav-text">容器使用</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#镜像使用"><span class="toc-nav-number">1.5.4.2.</span> <span class="toc-nav-text">镜像使用</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#容器连接"><span class="toc-nav-number">1.5.4.3.</span> <span class="toc-nav-text">容器连接</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Docker-打包-Springboot-项目（jdk）"><span class="toc-nav-number">1.5.5.</span> <span class="toc-nav-text">Docker 打包 Springboot 项目（jdk）</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#OpenAPI"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">OpenAPI</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#RESTful-基本概念"><span class="toc-nav-number">1.6.1.</span> <span class="toc-nav-text">RESTful 基本概念</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#规则"><span class="toc-nav-number">1.6.2.</span> <span class="toc-nav-text">规则</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#HTTP-动词"><span class="toc-nav-number">1.6.3.</span> <span class="toc-nav-text">HTTP 动词</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Restful-最佳实践"><span class="toc-nav-number">1.6.4.</span> <span class="toc-nav-text">Restful 最佳实践</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#OAUTH"><span class="toc-nav-number">1.6.5.</span> <span class="toc-nav-text">OAUTH</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#WebService"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">WebService</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#基本概念"><span class="toc-nav-number">1.7.1.</span> <span class="toc-nav-text">基本概念</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#相关术语"><span class="toc-nav-number">1.7.2.</span> <span class="toc-nav-text">相关术语</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#用法"><span class="toc-nav-number">1.7.3.</span> <span class="toc-nav-text">用法</span></a></li></ol></li></ol></li></ol>
+            
+          
+          </div>
+        </aside>
+      
+    
+
+
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: '♯'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+
+
+<style  type="text/css">
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank"  href="tencent://message/?Menu=yes&uin=825906196">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-qq fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a class="social weixin"  href="javascript:">  
+                           <!-- javascript:表示标签作为按钮使用，不做跳转，实现url访问拦截。 -->
+                            <img class="qrcode" src="img/wechat.png" alt="微信二维码">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-wechat fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/Whiskeyi">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="mailto:zhuchjie@gmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted text-center">
+                    Copyright &copy;
+                    <a href="https://zhuchj.com">
+                        <i>zhuchj</i>
+                    </a>|
+                    2020-2023
+                    All Rights Reserved.
+                    <br>
+                    备案号：浙ICP备2020041949号-1|
+                    <iframe name="star" style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0"
+                        width="60px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=Whiskeyi&repo=Whiskeyi.github.io&type=star">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- Search -->
+
+<script src="/js/search.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://zhuchj.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Search -->
+
+    <script type="text/javascript">      
+        var search_path = "search.xml";
+        if (search_path.length == 0) {
+            search_path = "search.xml";
+        }
+    var path = "/" + search_path;
+    searchFunc(path, 'local-search-input', 'local-search-result');
+    </script>
+
+
+<!-- busuanzi -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+
+    
+
+    <!--<script size="50" alpha='0.3' zIndex="-999" src="/js/ribbonStatic.js"></script>-->
+    
+        <script src="/js/ribbonDynamic.js"></script>
+    
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+
+</html>

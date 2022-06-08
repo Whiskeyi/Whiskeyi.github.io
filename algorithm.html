@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="baidu-site-verification" content="093lY4ziMu" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!--<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
+    <title>
+        
+          重拾算法(Re-learning Algorithm) - ZHUCHJ
+        
+    </title>
+
+    <link rel="canonical" href="https://zhuchj.com/algorithm.html">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS --> 
+    
+        
+<link rel="stylesheet" href="/css/dusign-light.css">
+
+        
+<link rel="stylesheet" href="/css/dusign-common-light.css">
+
+        
+<link rel="stylesheet" href="/css/font-awesome.css">
+
+        
+<link rel="stylesheet" href="/css/toc.css">
+
+        <!-- background effects end -->
+    
+    
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    
+<link rel="stylesheet" href="/css/widget.css">
+
+
+    
+<link rel="stylesheet" href="/css/rocket.css">
+
+
+    
+<link rel="stylesheet" href="/css/signature.css">
+
+
+    
+<link rel="stylesheet" href="/css/fonts.googleapis.css">
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <!-- photography -->
+    
+<link rel="stylesheet" href="/css/photography.css">
+
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- background effects start -->
+    
+    <!-- background effects end -->
+
+	<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            
+                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('img/algorithm/head.jpg')
+                /*post*/
+            
+        
+    }
+    
+    #signature{
+        background-image: url('/img/signature/dusign.png');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#JS" title="JS">JS</a>
+                            
+                        </div>
+                        <h1>重拾算法(Re-learning Algorithm)</h1>
+                        <h2 class="subheading">JS</h2>
+                        <span class="meta">
+                            由 Whiskeyi 于
+                            2022-05-14 发布
+                        </span>
+
+                        
+                            <div class="blank_box"></div>
+                            <span class="meta">
+                                全文 <span class="post-count">3k</span> 字，
+                                阅读约需 <span class="post-count">10</span> 分钟
+                            </span>
+                            <div class="blank_box"></div>
+                            <!-- 不蒜子统计 start -->
+                            <span class="meta">
+                                浏览 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> 次
+                            </span>
+                            <!-- 不蒜子统计 end -->
+                        
+
+                    </div>
+                
+
+                </div>
+            </div>
+        </div>      
+    </div>
+
+    
+</header>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+    var boxObj = document.getElementById('words');
+    if (boxObj) {
+        new Typed(boxObj,{
+        strings: ['Whiskeyi&#39;s Blog'],
+        typeSpeed: 160,
+        startDelay: 100,
+        loop: false,
+        loopCount: Infinity,
+        cursorChar: '|' // 
+        });
+    }
+ </script>
+
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">ZHUCHJ</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/photography/">摄影</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">关于</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">归档</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">标签</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/categories/">分类</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h2 id="重拾算法-Re-learning-Algorithm"><a href="#重拾算法-Re-learning-Algorithm" class="headerlink" title="重拾算法(Re-learning Algorithm)"></a>重拾算法(Re-learning Algorithm)</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>数据结构和算法是一名合格程序员的基本素质，本专栏与在构建的<code>重拾数据结构(Re-learning Data Structure)</code>专栏一起，旨在回顾课程及自我学习到的数据结构和算法内容的知识，对它们进行重新梳理。代码以<code>JavaScript</code>语言编写，后续会持续更新记录自己的刷题过程。</p>
+<blockquote>
+<p>内容持续更新中…</p>
+</blockquote>
+<h3 id="算法概述"><a href="#算法概述" class="headerlink" title="算法概述"></a>算法概述</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>一般认为，算法是由若干条指令组成的有穷序列，具有下列五个特性：</p>
+<ol>
+<li>确定性：每条指令都是明确的、无二义的</li>
+<li>能行性：每条指令都必须是能够执行的</li>
+<li>输入：允许有 0 个或多个输入量，取自特定的集合</li>
+<li>输出：产生一个或多个输出，它（们）与输入量之间存在着某种特定的关系</li>
+<li>有穷性：每一条指令执行的次数都是有穷的</li>
+</ol>
+<blockquote>
+<p>注：如果不满足有穷性，满足前 4 条，则称为计算过程，操作系统 OS 就是计算过程</p>
+</blockquote>
+<h4 id="算法的评定"><a href="#算法的评定" class="headerlink" title="算法的评定"></a>算法的评定</h4><p>同一问题可用不同算法解决，而一个算法的质量优劣将影响到算法乃至程序的效率。算法分析的目的在于选择合适算法和改进算法。一个算法的评价主要从<code>时间复杂度</code>和<code>空间复杂度</code>来考虑。</p>
+<ul>
+<li>时间复杂度:算法的时间复杂度是指执行算法所需要的计算工作量。一般来说，计算机算法是问题规模的函数，因此，问题的规模越大，算法执行的时间的增长率与的增长率正相关，称作渐进时间复杂度（Asymptotic Time Complexity）。</li>
+<li>空间复杂度: 算法的空间复杂度是指算法需要消耗的内存空间。其计算和表示方法与时间复杂度类似，一般都用复杂度的渐近性来表示。同时间复杂度相比，空间复杂度的分析要简单得多。</li>
+<li>正确性: 算法的正确性是评价一个算法优劣的最重要的标准。</li>
+<li>可读性: 算法的可读性是指一个算法可供人们阅读的容易程度。</li>
+<li>鲁棒性: 鲁棒性是指一个算法对不合理数据输入的反应能力和处理能力，也称为容错性。</li>
+</ul>
+<h4 id="NP-完全性理论"><a href="#NP-完全性理论" class="headerlink" title="NP 完全性理论"></a>NP 完全性理论</h4><p><strong>多项式时间和非多项式时间：</strong></p>
+<p><img src="img/algorithm/on.png" alt="on"></p>
+<p>当问题的规模足够大的时候，有的问题的时间复杂度是多项式时间的，而有的是非多项式时间的。也就是说，对于规模很大的非多项式时间问题，要解决它的话需要很久的时间，时间呈现指数级增长。</p>
+<h5 id="P-Polynomial-time"><a href="#P-Polynomial-time" class="headerlink" title="P(Polynomial-time)"></a>P(Polynomial-time)</h5><p>如果一个问题可以找到一个能在多项式的时间（有限，除 n 次方阶乘等）里解决它的算法，那么这个问题就属于 P 问题。</p>
+<h5 id="NP-Nondeterministic-Polynomial-time"><a href="#NP-Nondeterministic-Polynomial-time" class="headerlink" title="NP(Nondeterministic Polynomial-time)"></a>NP(Nondeterministic Polynomial-time)</h5><p>即非确定性多项式时间，在多项式时间内可以被证明（验证）的问题（可以在多项式的时间里猜出一个解的问题）。</p>
+<p>对于一个问题，如果我们能够在多项式时间内解决，那么我们肯定也能在多项式时间内验证某个猜测是否为这个问题的一个解，因此 P 问题也属于 NP 问题，或者说 P 问题是 NP 问题的一个子集。</p>
+<h5 id="NPC-NP-Completeness-：NP-中最难的问题"><a href="#NPC-NP-Completeness-：NP-中最难的问题" class="headerlink" title="NPC(NP Completeness)：NP 中最难的问题"></a>NPC(NP Completeness)：NP 中最难的问题</h5><p><strong>非形式化定义</strong>，如果一个 NP 问题和其他任何 NP 问题一样“不易解决”（归约），那么我们认为这一问题是 NPC 类问题或称之为 NP 完全问题</p>
+<p>首先，它得是一个 NP 问题；然后，所有的 NP 问题都可以约化到它。所有的 NP 问题都可以归约到它。也就是说，解决了这个问题，也就同时解决了所有的 NP 问题</p>
+<p><strong>归约</strong>：一个问题 A 可以约化为问题 B 的含义即是，可以用问题 B 的解法解决问题 A，或者说，问题 A 可以“变成”问题 B（B 的时间复杂度高于或者等于 A 的时间复杂度）</p>
+<p>一个问题约化为另一个问题，时间复杂度增加了，问题的应用范围也增大了</p>
+<p><img src="img/algorithm/np.png" alt="np"></p>
+<h3 id="基本算法"><a href="#基本算法" class="headerlink" title="基本算法"></a>基本算法</h3><h4 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h4><h4 id="搜索算法"><a href="#搜索算法" class="headerlink" title="搜索算法"></a>搜索算法</h4><h4 id="穷举法"><a href="#穷举法" class="headerlink" title="穷举法"></a>穷举法</h4><p>穷举法，或称为暴力破解法，其基本思路是：对于要解决的问题，列举出它的所有可能的情况，逐个判断有哪些是符合问题所要求的条件，从而得到问题的解。它也常用于对于密码的破译，即将密码进行逐个推算直到找出真正的密码为止。例如一个已知是四位并且全部由数字组成的密码，其可能共有 10000 种组合，因此最多枚举 10000 次就能找到正确的密码。</p>
+<h3 id="常用算法"><a href="#常用算法" class="headerlink" title="常用算法"></a>常用算法</h3><h4 id="迭代-amp-递归-amp-分治法"><a href="#迭代-amp-递归-amp-分治法" class="headerlink" title="迭代 &amp; 递归 &amp; 分治法"></a>迭代 &amp; 递归 &amp; 分治法</h4><ul>
+<li>迭代：迭代是重复反馈过程的活动，逼近所需目标或结果</li>
+<li>递归：直接或者间接调用自身的算法</li>
+<li>分治：把一个复杂的问题分成两个或更多的相同或相似的子问题，再把子问题分成更小的子问题……直到最后子问题可以简单的直接求解</li>
+</ul>
+<p><strong>分治条件：</strong></p>
+<ol>
+<li>边界条件：该问题的规模缩小到一定的程度就可以容易地解决</li>
+<li>问题分解性质 1：该问题可以分解为若干个规模较小的相同问题，即该问题具有最优子结构性质（子问题最优则原问题即最优</li>
+<li>问题分解性质 2：该问题所分解出的各个子问题是相互独立的，即子问题之间不包含公共的子问题；（不独立则使用动态规划）</li>
+<li>合并：利用该问题分解出的子问题的解可以合并为该问题的解</li>
+</ol>
+<p><strong>原则：</strong><br>在用分治法设计算法时，最好使子问题的规模大致相同。即将一个问题分成大小相等的 k 个子问题的处理方法是行之有效的。这种使子问题规模大致相等的做法是出自一种平衡(balancing)子问题的思想，它几乎总是比子问题规模不等的做法要好</p>
+<p><strong>两者关系：</strong><br>由分治法产生的子问题往往是原问题的较小模式，这就为使用递归技术提供了方便。在这种情况下，反复应用分治手段，可以使子问题与原问题类型一致而其规模却不断缩小，最终使子问题缩小到很容易直接求出其解。这自然导致递归过程的产生</p>
+<h4 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h4><p>动态规划算法与分治法类似，其基本思想也是将待求解问题分解成若干个子问题。但是经分解得到的子问题往往不是互相独立的。不同子问题的数目常常只有多项式量级。在用分治法求解时，有些子问题被重复计算了许多次</p>
+<p>如果能够保存已解决的子问题的答案，而在需要时再找出已求得的答案，就可以避免大量重复计算，从而得到多项式时间算法</p>
+<p><strong>步骤：</strong></p>
+<ol>
+<li>找出最优解的性质，并刻划其结构特征</li>
+<li>递归地定义最优值</li>
+<li>以自底向上的方式计算出最优值</li>
+<li>根据计算最优值时得到的信息，构造最优解</li>
+</ol>
+<p>动态规划与分治法相似，都是组合子问题的解来解决原问题的解，与分治法的不同在于：分治法的子问题是相互独立存在的，而动态规划应用于子问题重叠的情况。</p>
+<h4 id="贪心"><a href="#贪心" class="headerlink" title="贪心"></a>贪心</h4><p><strong>基本思路：</strong></p>
+<p>在对问题求解时，总是做出在当前看来是最好的选择（局部最优解）<br>所求问题的整体最优解可以通过一系列局部最优的选择，即贪心选择来达到。<br>动态规划算法通常以自底向上的方式解各子问题，而贪心算法则通常以自顶向下的方式进行，以迭代的方式作出相继的贪心选择，每作一次贪心选择就将所求问题简化为规模更小的子问题</p>
+<ol>
+<li>建立数学模型来描述问题</li>
+<li>把求解的问题分成若干个子问题</li>
+<li>对每一子问题求解，得到子问题的局部最优解</li>
+<li>把子问题的解局部最优解合成原来解问题的一个解</li>
+</ol>
+<p><strong>最优子结构：</strong><br>当一个问题的最优解包含其子问题的最优解时，称此问题具有最优子结构性质。问题的最优子结构性质是该问题可用动态规划算法或贪心算法求解的关键特征</p>
+<h4 id="回溯法"><a href="#回溯法" class="headerlink" title="回溯法"></a>回溯法</h4><p><strong>基本思路：</strong></p>
+<ol>
+<li>针对所给问题，定义问题的解空间，确定易于搜索的解空间结构</li>
+<li>以深度优先方式搜索解空间</li>
+<li>在搜索过程中用剪枝函数避免无效搜索</li>
+</ol>
+<p>回溯法的基本行为是搜索，搜索过程使用剪枝函数来为了避免无效的搜索。剪枝函数包括两类：</p>
+<ol>
+<li>使用约束函数，剪去不满足约束条件的路径</li>
+<li>使用限界函数，剪去不能得到最优解的路径</li>
+</ol>
+<p>问题的关键在于如何定义问题的解空间，转化成树（即解空间树）</p>
+<p>回溯法的构造解空间树分为排列树和子集树。当选项可以重复时，则解空间树为子集树，如 01 背包中，每项都可以选或者不选，最小重量机器设计中，每个零件都可以在所有供应商买到。当解空间不可以重复时，解空间树则为排列树，如旅行售货员问题中，每条道路不能重复走，羽毛球最佳配对问题中，队员不能重复选择</p>
+<h4 id="分支限界法"><a href="#分支限界法" class="headerlink" title="分支限界法"></a>分支限界法</h4><p>与回溯法一样，分支限界法也是在问题的解空间树上搜索问题的解的一种算法</p>
+<p><strong>区别：</strong></p>
+<ol>
+<li>求解目标不同：<ul>
+<li>回溯法的求解目标一般是找出解空间树中满足条件的所有解</li>
+<li>分支限界法则是尽快找出满足约束条件的一个解，或是在满足约束条件的解中找出在某种意义下的最优解</li>
+</ul>
+</li>
+<li>搜索方式不同：<ul>
+<li>回溯法——&gt;深度优先遍历结点搜索解空间树</li>
+<li>分支限界法——&gt;广度优先或最小耗费优先搜索解空间树</li>
+</ul>
+</li>
+<li>空间不同：<ul>
+<li>分支限界法由于加入了活结点表，所以存储空间比回溯法大得多。因此当内存容量有限时，回溯法的成功率要大一些分支限界法中，每个活结点只有一次机会变成扩展结点，一旦成为扩展结点便一次性生成其所有子结点组织形式：最大团问题——最大堆，旅行商问题——最小堆</li>
+</ul>
+</li>
+</ol>
+<p><strong>小结</strong>：回溯法空间效率更高，分支限界法由于只需要求到一个解，所以往往更“快”</p>
+<h4 id="随机化算法"><a href="#随机化算法" class="headerlink" title="随机化算法"></a>随机化算法</h4><p><strong>算法思路：</strong></p>
+<p>在算法中使用随机函数,其中决策依赖于某种随机事件,基本特征是同一个实例用统一随机化算法得到可能完全不同的结果</p>
+<ul>
+<li>数值随机化算法</li>
+<li>蒙特卡罗（Monte Carlo）算法</li>
+<li>拉斯维加斯（Las Vegas）算法</li>
+<li>舍伍德（Sherwood）算法</li>
+<li>…</li>
+</ul>
+
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/integration.html" data-toggle="tooltip" data-placement="top" title="系统集成优化(System integration and optimization)">Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/promise.html" data-toggle="tooltip" data-placement="top" title="进一步理解Promise对象(Promise)">Next Post</a>
+                    </li>
+                    
+                </ul>
+
+                <!-- tip start -->
+                
+
+                
+                <!-- tip end -->
+
+                <!-- Music start-->
+                
+                <!-- Music end -->
+
+                <!-- Sharing -->
+                
+                <!-- Sharing -->
+
+                <!-- gitment start -->
+                
+                <!-- gitment end -->
+
+                <!-- 来必力City版安装代码 -->
+                
+                <!-- City版安装代码已完成 -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+            </div>
+
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      
+        <aside id="sidebar">
+          <div id="toc" class="toc-article">
+          <strong class="toc-title">文章目录：</strong>
+          
+            
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#重拾算法-Re-learning-Algorithm"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">重拾算法(Re-learning Algorithm)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#介绍"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">介绍</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#算法概述"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">算法概述</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#定义"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">定义</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#算法的评定"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">算法的评定</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#NP-完全性理论"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">NP 完全性理论</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#P-Polynomial-time"><span class="toc-nav-number">1.2.3.1.</span> <span class="toc-nav-text">P(Polynomial-time)</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#NP-Nondeterministic-Polynomial-time"><span class="toc-nav-number">1.2.3.2.</span> <span class="toc-nav-text">NP(Nondeterministic Polynomial-time)</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#NPC-NP-Completeness-：NP-中最难的问题"><span class="toc-nav-number">1.2.3.3.</span> <span class="toc-nav-text">NPC(NP Completeness)：NP 中最难的问题</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#基本算法"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">基本算法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#排序算法"><span class="toc-nav-number">1.3.1.</span> <span class="toc-nav-text">排序算法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#搜索算法"><span class="toc-nav-number">1.3.2.</span> <span class="toc-nav-text">搜索算法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#穷举法"><span class="toc-nav-number">1.3.3.</span> <span class="toc-nav-text">穷举法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#常用算法"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">常用算法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#迭代-amp-递归-amp-分治法"><span class="toc-nav-number">1.4.1.</span> <span class="toc-nav-text">迭代 &amp; 递归 &amp; 分治法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#动态规划"><span class="toc-nav-number">1.4.2.</span> <span class="toc-nav-text">动态规划</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#贪心"><span class="toc-nav-number">1.4.3.</span> <span class="toc-nav-text">贪心</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#回溯法"><span class="toc-nav-number">1.4.4.</span> <span class="toc-nav-text">回溯法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#分支限界法"><span class="toc-nav-number">1.4.5.</span> <span class="toc-nav-text">分支限界法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#随机化算法"><span class="toc-nav-number">1.4.6.</span> <span class="toc-nav-text">随机化算法</span></a></li></ol></li></ol></li></ol>
+            
+          
+          </div>
+        </aside>
+      
+    
+
+
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: '♯'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+
+
+<style  type="text/css">
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank"  href="tencent://message/?Menu=yes&uin=825906196">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-qq fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a class="social weixin"  href="javascript:">  
+                           <!-- javascript:表示标签作为按钮使用，不做跳转，实现url访问拦截。 -->
+                            <img class="qrcode" src="img/wechat.png" alt="微信二维码">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-wechat fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/Whiskeyi">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="mailto:zhuchjie@gmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted text-center">
+                    Copyright &copy;
+                    <a href="https://zhuchj.com">
+                        <i>zhuchj</i>
+                    </a>|
+                    2020-2023
+                    All Rights Reserved.
+                    <br>
+                    备案号：浙ICP备2020041949号-1|
+                    <iframe name="star" style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0"
+                        width="60px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=Whiskeyi&repo=Whiskeyi.github.io&type=star">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- Search -->
+
+<script src="/js/search.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://zhuchj.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Search -->
+
+    <script type="text/javascript">      
+        var search_path = "search.xml";
+        if (search_path.length == 0) {
+            search_path = "search.xml";
+        }
+    var path = "/" + search_path;
+    searchFunc(path, 'local-search-input', 'local-search-result');
+    </script>
+
+
+<!-- busuanzi -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+
+    
+
+    <!--<script size="50" alpha='0.3' zIndex="-999" src="/js/ribbonStatic.js"></script>-->
+    
+        <script src="/js/ribbonDynamic.js"></script>
+    
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+
+</html>
