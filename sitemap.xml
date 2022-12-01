@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zhuchj.com/preact.html</loc>
+    
+    <lastmod>2022-12-01T16:06:13.198Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zhuchj.com/algorithm.html</loc>
     
     <lastmod>2022-10-30T06:10:44.831Z</lastmod>
