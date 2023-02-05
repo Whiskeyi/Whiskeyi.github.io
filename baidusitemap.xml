@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://zhuchj.com/unit-test.html</loc>
+    <lastmod>2023-02-05</lastmod>
+  </url>
+  <url>
     <loc>https://zhuchj.com/preact.html</loc>
-    <lastmod>2022-12-01</lastmod>
+    <lastmod>2022-12-07</lastmod>
+  </url>
+  <url>
+    <loc>https://zhuchj.com/greensock.html</loc>
+    <lastmod>2022-12-07</lastmod>
   </url>
   <url>
     <loc>https://zhuchj.com/algorithm.html</loc>
@@ -10,10 +18,6 @@
   </url>
   <url>
     <loc>https://zhuchj.com/ast.html</loc>
-    <lastmod>2022-10-28</lastmod>
-  </url>
-  <url>
-    <loc>https://zhuchj.com/greensock.html</loc>
     <lastmod>2022-10-28</lastmod>
   </url>
   <url>
