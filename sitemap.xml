@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zhuchj.com/about/index.html</loc>
+    
+    <lastmod>2023-02-15T17:41:20.680Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zhuchj.com/unit-test.html</loc>
     
     <lastmod>2023-02-05T08:55:25.590Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>https://zhuchj.com/ast.html</loc>
     
     <lastmod>2022-10-28T15:25:11.095Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zhuchj.com/about/index.html</loc>
-    
-    <lastmod>2022-09-12T12:54:03.509Z</lastmod>
     
   </url>
   
